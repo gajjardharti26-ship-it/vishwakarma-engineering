@@ -23,7 +23,7 @@
 
     <!-- Main Navbar -->
     <nav class="navbar navbar-expand-lg shadow-sm">
-        <div class="container">
+        <div class="container px-3 px-lg-0">
             <a class="navbar-brand brand-container" href="{{ url('/') }}">
                 <img src="{{ asset('assets/images/logo(1).jpeg') }}" alt="VE Icon" class="brand-icon">
                 <div class="brand-text-wrapper">

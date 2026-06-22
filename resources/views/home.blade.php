@@ -16,7 +16,7 @@
             <!-- Slide 1: Industrial Vessels -->
             <div class="carousel-item active hero-slide-1" style="height: 80vh; background-color: var(--primary-blue);">
                 <div class="hero-image-overlay" style="background-image: url('{{ asset('assets/images/slide-1.png') }}');"></div>
-                <div class="carousel-caption d-flex align-items-center h-100 text-start">
+                <div class="carousel-caption d-flex align-items-center h-100 text-center text-md-start">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8">
@@ -25,7 +25,7 @@
                                 </div>
                                 <h1 class="display-3 fw-bold mb-4 animated fadeInUp outfit text-white hero-title"><span class="text-accent-industrial">Precision</span> Engineering <br>for Industrial Excellence</h1>
                                 <p class="mb-4 animated fadeInUp delay-1s fs-5" style="color: rgba(255,255,255,0.9); max-width: 650px;">Manufacturing high-quality Pressure Vessels, Chemical Reactors, Storage Tanks, and Process Equipment with uncompromising quality, precision, and reliability since 2007.</p>
-                                <div class="animated fadeInUp delay-2s d-flex align-items-center gap-3 mt-4">
+                                <div class="animated fadeInUp delay-2s d-flex justify-content-center justify-content-md-start align-items-center gap-3 mt-4 flex-wrap">
                                     <a href="{{ url('/products') }}" class="btn btn-primary-premium px-4 py-2 small fw-bold">explore products</a>
                                     <a href="{{ url('/contact') }}" class="btn btn-outline-premium px-4 py-2 small fw-bold">request quote</a>
                                 </div>
@@ -37,7 +37,7 @@
             <!-- Slide 2: Chemical Reactors -->
             <div class="carousel-item" style="height: 80vh; background-color: var(--primary-blue);">
                 <div class="hero-image-overlay" style="background-image: url('{{ asset('assets/images/slide-2.png') }}'); background-size: cover; background-position: right center;"></div>
-                <div class="carousel-caption d-flex align-items-center h-100 text-start">
+                <div class="carousel-caption d-flex align-items-center h-100 text-center text-md-start">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8">
@@ -46,7 +46,7 @@
                                 </div>
                                 <h1 class="display-3 fw-bold mb-4 animated fadeInUp outfit text-white hero-title">Advanced <span class="text-accent-industrial">Process</span> <br>Equipment Solutions</h1>
                                 <p class="mb-4 animated fadeInUp delay-1s fs-5" style="color: rgba(255,255,255,0.9); max-width: 700px;">Delivering world-class MS & SS process equipment for Petrochemical, Chemical, Pigment, Agro-Chemical, and Industrial applications with engineering excellence and proven performance.</p>
-                                <div class="animated fadeInUp delay-2s d-flex align-items-center gap-3 mt-4">
+                                <div class="animated fadeInUp delay-2s d-flex justify-content-center justify-content-md-start align-items-center gap-3 mt-4 flex-wrap">
                                     <a href="{{ url('/about') }}" class="btn btn-primary-premium px-4 py-2 small fw-bold">why choose us</a>
                                     <a href="{{ url('/gallery') }}" class="btn btn-outline-premium px-4 py-2 small fw-bold">our gallery</a>
                                 </div>
@@ -737,5 +737,20 @@ olor: var(--logo-blue);
     .carousel-item.active .fadeInUp { animation-name: fadeInUp; }
     .delay-1s { animation-delay: 0.5s; }
     .delay-2s { animation-delay: 1s; }
+
+    @media (max-width: 767px) {
+        .hero-title {
+            font-size: 2.2rem !important;
+            line-height: 1.2;
+        }
+        .carousel-control-prev-icon-custom,
+        .carousel-control-next-icon-custom {
+            width: 35px;
+            height: 35px;
+            font-size: 0.9rem;
+            margin: 0 5px;
+            flex-shrink: 0;
+        }
+    }
 </style>
 @endpush

@@ -72,7 +72,7 @@
 
             <!-- Contact Form -->
             <div class="col-lg-7">
-                <div class="card p-5 border-0 shadow-sm" style="background-color: #fcfcfc;">
+                <div class="card p-3 p-md-5 border-0 shadow-sm" style="background-color: #fcfcfc;">
                     @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             {{ session('success') }}
@@ -87,18 +87,18 @@
                     @endif
                     <form action="{{ url('/contact/send') }}" method="POST">
                         @csrf
-                        <div class="row g-4">
+                        <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" name="name" class="form-control p-3 bg-light border-0 rounded-3" placeholder="Enter Name" required>
+                                <input type="text" name="name" class="form-control p-2 p-md-3 bg-light border-0 rounded-3" placeholder="Enter Name" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" name="email" class="form-control p-3 bg-light border-0 rounded-3" placeholder="Enter Email Address" required>
+                                <input type="email" name="email" class="form-control p-2 p-md-3 bg-light border-0 rounded-3" placeholder="Enter Email Address" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" name="phone" class="form-control p-3 bg-light border-0 rounded-3" placeholder="Enter Phone Number" required>
+                                <input type="tel" name="phone" class="form-control p-2 p-md-3 bg-light border-0 rounded-3" placeholder="Enter Phone Number" required>
                             </div>
                             <div class="col-md-6">
-                                <select name="product" class="form-select p-3 bg-light border-0 rounded-3" required>
+                                <select name="product" class="form-select p-2 p-md-3 bg-light border-0 rounded-3" required>
                                     <option value="" selected disabled>Select Product Category</option>
                                     <option value="Industrial Vessel">Industrial Vessel</option>
                                     <option value="Reactor">Reactor</option>
@@ -111,10 +111,10 @@
                                 </select>
                             </div>
                             <div class="col-12">
-                                <input type="text" name="subject" class="form-control p-3 bg-light border-0 rounded-3" placeholder="Project Requirement" required>
+                                <input type="text" name="subject" class="form-control p-2 p-md-3 bg-light border-0 rounded-3" placeholder="Project Requirement" required>
                             </div>
                             <div class="col-12">
-                                <textarea name="message" class="form-control p-3 bg-light border-0 rounded-3" rows="5" placeholder="Describe your requirement, equipment specifications, capacity, material (MS/SS), or project details..." required></textarea>
+                                <textarea name="message" class="form-control p-2 p-md-3 bg-light border-0 rounded-3" rows="5" placeholder="Describe your requirement, equipment specifications, capacity, material (MS/SS), or project details..." required></textarea>
                             </div>
                             <div class="col-12 text-center">
                                 <button type="submit" class="btn btn-primary-custom px-5 py-2 mt-2 fw-bold" style="letter-spacing: 1px;">Request a Quote</button>

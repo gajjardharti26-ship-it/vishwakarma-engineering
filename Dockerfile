@@ -17,7 +17,7 @@ RUN chown -R www-data:www-data storage bootstrap/cache
 
 RUN a2enmod rewrite
 
-COPY .docker/vhost.conf /etc/apache2/sites-available/000-default.conf
+COPY docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
 EXPOSE 80
 

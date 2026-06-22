@@ -1,0 +1,46 @@
+Starting migration...
+Views Directory: C:\xampp8\htdocs\vishwakarmaengg\resources\views
+Images Directory: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images
+
+Found 1 Unsplash URL(s) in: about.blade.php
+  Downloading: https://images.unsplash.com/photo-1533230392651-d306660f7725?auto=format&fit=crop&q=80&w=2000
+  Saving to: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images/unsplash-photo-1533230392651-d306660f7725.jpg
+  FAILED to download: https://images.unsplash.com/photo-1533230392651-d306660f7725?auto=format&fit=crop&q=80&w=2000
+
+Found 4 Unsplash URL(s) in: index.blade.php
+  Downloading: https://images.unsplash.com/photo-1533230392651-d306660f7725?auto=format&fit=crop&q=80&w=2000
+  Saving to: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images/unsplash-photo-1533230392651-d306660f7725.jpg
+  FAILED to download: https://images.unsplash.com/photo-1533230392651-d306660f7725?auto=format&fit=crop&q=80&w=2000
+  Downloading: https://images.unsplash.com/photo-1535813540-d181171f65d5?auto=format&fit=crop&q=80&w=800
+  Saving to: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images/unsplash-photo-1535813540-d181171f65d5.jpg
+  FAILED to download: https://images.unsplash.com/photo-1535813540-d181171f65d5?auto=format&fit=crop&q=80&w=800
+  Downloading: https://images.unsplash.com/photo-1516773959-11850d87d3f4?auto=format&fit=crop&q=80&w=800
+  Saving to: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images/unsplash-photo-1516773959-11850d87d3f4.jpg
+  FAILED to download: https://images.unsplash.com/photo-1516773959-11850d87d3f4?auto=format&fit=crop&q=80&w=800
+  Downloading: https://images.unsplash.com/photo-1496248915891-99c4383c57ad?auto=format&fit=crop&q=80&w=800
+  Saving to: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images/unsplash-photo-1496248915891-99c4383c57ad.jpg
+  FAILED to download: https://images.unsplash.com/photo-1496248915891-99c4383c57ad?auto=format&fit=crop&q=80&w=800
+
+Found 1 Unsplash URL(s) in: gallery.blade.php
+  Downloading: https://images.unsplash.com/photo-1516773959-11850d87d3f4?auto=format&fit=crop&q=80&w=600
+  Saving to: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images/unsplash-photo-1516773959-11850d87d3f4.jpg
+  FAILED to download: https://images.unsplash.com/photo-1516773959-11850d87d3f4?auto=format&fit=crop&q=80&w=600
+
+Found 3 Unsplash URL(s) in: industries.blade.php
+  Downloading: https://images.unsplash.com/photo-1535813540-d181171f65d5?auto=format&fit=crop&q=80&w=800
+  Saving to: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images/unsplash-photo-1535813540-d181171f65d5.jpg
+  FAILED to download: https://images.unsplash.com/photo-1535813540-d181171f65d5?auto=format&fit=crop&q=80&w=800
+  Downloading: https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800
+  Saving to: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images/unsplash-photo-1587854692152-cbe660dbbb88.jpg
+  FAILED to download: https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=800
+  Downloading: https://images.unsplash.com/photo-1592982537447-6f2a6a0c3c1b?auto=format&fit=crop&q=80&w=800
+  Saving to: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images/unsplash-photo-1592982537447-6f2a6a0c3c1b.jpg
+  FAILED to download: https://images.unsplash.com/photo-1592982537447-6f2a6a0c3c1b?auto=format&fit=crop&q=80&w=800
+
+Found 12 Unsplash URL(s) in: category.blade.php
+  Downloading: https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=600
+  Saving to: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images/unsplash-photo-1541888946425-d81bb19480c5.jpg
+  FAILED to download: https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=600
+  Downloading: https://images.unsplash.com/photo-1532187875605-7fe3b25dd948?auto=format&fit=crop&q=80&w=600
+  Saving to: C:\xampp8\htdocs\vishwakarmaengg\public\assets\images/unsplash-photo-1532187875605-7fe3b25dd948.jpg
+  FAILED to download: https://images.unsplash.com/photo-1532187875605-7fe3b25dd948?auto=format&fit=crop&q=80&w=600

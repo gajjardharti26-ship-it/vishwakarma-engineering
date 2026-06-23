@@ -36,8 +36,7 @@ class ContactController extends Controller
             // 4. Redirect back with success message
             return back()->with('success', 'Thank you! Your inquiry has been received. We will get in touch with you shortly.');
         } catch (\Exception $e) {
-            // 5. Friendly generic error message for customers
-            return back()->with('error', 'We apologize, but our system is currently experiencing issues. Please try again later or contact us via phone.');
+        dd($e->getMessage());
         }
     }
 }

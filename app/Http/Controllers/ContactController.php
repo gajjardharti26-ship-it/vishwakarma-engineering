@@ -31,6 +31,8 @@ class ContactController extends Controller
         
         // 3. Send out the email using Laravel's robust mailer
         try {
+            
+    dd(config('mail.mailers.smtp'));
             Mail::to($recipient)->send(new InquiryMail($validatedData));
             
             // 4. Redirect back with success message

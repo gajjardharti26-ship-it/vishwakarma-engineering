@@ -32,13 +32,13 @@ class ContactController extends Controller
         // 3. Send out the email using Laravel's robust mailer
         try {
             
-    dd(config('mail.mailers.smtp'));
+    // dd(config('mail.mailers.smtp'));
             Mail::to($recipient)->send(new InquiryMail($validatedData));
             
             // 4. Redirect back with success message
             return back()->with('success', 'Thank you! Your inquiry has been received. We will get in touch with you shortly.');
         } catch (\Exception $e) {
-        dd($e->getMessage());
+        // dd($e->getMessage());
         }
     }
 }

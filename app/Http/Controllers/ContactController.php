@@ -37,7 +37,7 @@ class ContactController extends Controller
                 // Use Resend HTTP API to bypass Render's blocked SMTP ports
                 $html = view('emails.inquiry', ['data' => $validatedData])->render();
                 \Illuminate\Support\Facades\Http::withToken($resendApiKey)->post('https://api.resend.com/emails', [
-                    'from' => 'onboarding@resend.dev',
+                    'from' => 'Vishwakarma Engineering <onboarding@resend.dev>',
                     'to' => $recipient,
                     'subject' => 'New Inquiry: ' . $validatedData['subject'],
                     'html' => $html,

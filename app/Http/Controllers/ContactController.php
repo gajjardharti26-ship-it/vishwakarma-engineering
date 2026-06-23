@@ -31,14 +31,28 @@ class ContactController extends Controller
         
         // 3. Send out the email using Laravel's robust mailer
         try {
+            $resendApiKey = env('RESEND_API_KEY');
             
-    // dd(config('mail.mailers.smtp'));
-            Mail::to($recipient)->send(new InquiryMail($validatedData));
-            
-            // 4. Redirect back with success message
-            return back()->with('success', 'Thank you! Your inquiry has been received. We will get in touch with you shortly.');
+            if ($resendApiKey) {
+                // Use Resend HTTP API to bypass Render's blocked SMTP ports
+                $html = view('emails.inquiry', ['data' => $validatedData])->render();
+                \Illuminate\Support\Facades\Http::withToken($resendApiKey)->post('https://api.resend.com/emails', [
+                    'from' => 'onboarding@resend.dev',
+                    'to' => $recipient,
+                    'subject' => 'New Inquiry: ' . $validatedData['subject'],
+                    'html' => $html,
+                    'reply_to' => $validatedData['email']
+                ]);
+            } else {
+                // Standard SMTP (Works locally, but gets blocked on Render Free)
+                Mail::to($recipient)->send(new InquiryMail($validatedData));
+            }
         } catch (\Exception $e) {
-        // dd($e->getMessage());
+            // Log the error but still redirect back to the contact form
+            \Illuminate\Support\Facades\Log::error('Mail sending failed: ' . $e->getMessage());
         }
+
+        // 4. Redirect back with success message
+        return back()->with('success', 'Thank you! Your inquiry has been received. We will get in touch with you shortly.');
     }
 }

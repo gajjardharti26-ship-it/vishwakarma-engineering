@@ -48,7 +48,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Products
                         </a>
-                        <div class="mega-menu-content p-4 border-0 rounded-0">
+                        <div class="dropdown-menu mega-menu-content p-4 border-0 rounded-0">
                             <div class="container-fluid">
                                 <div class="row g-4">
                                     <!-- Column 1: Vessel & Reactor -->

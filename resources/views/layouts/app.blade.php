@@ -419,6 +419,25 @@
 
         @media (max-width: 991.98px) {
             .navbar { border-bottom: none; }
+            .mega-menu-content {
+                position: static !important;
+                box-shadow: none !important;
+                border-top: none !important;
+                padding: 0 !important;
+                display: none !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            .mega-menu-content.show, .mega-menu.show .mega-menu-content {
+                display: block !important;
+                padding: 1rem 0 !important;
+            }
+            .navbar-collapse {
+                max-height: 75vh;
+                overflow-y: auto;
+                background-color: var(--white);
+                padding-bottom: 20px;
+            }
         }
     </style>
     @stack('styles')

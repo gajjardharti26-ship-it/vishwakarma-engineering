@@ -48,7 +48,7 @@
                                 <p class="mb-4 animated fadeInUp delay-1s fs-5" style="color: rgba(255,255,255,0.9); max-width: 700px;">Delivering world-class MS & SS process equipment for Petrochemical, Chemical, Pigment, Agro-Chemical, and Industrial applications with engineering excellence and proven performance.</p>
                                 <div class="animated fadeInUp delay-2s d-flex justify-content-center justify-content-md-start align-items-center gap-3 mt-4 flex-wrap">
                                     <a href="{{ url('/about') }}" class="btn btn-primary-premium px-4 py-2 small fw-bold">why choose us</a>
-                                    <a href="{{ url('/gallery') }}" class="btn btn-outline-premium px-4 py-2 small fw-bold">our gallery</a>
+                                    <a href="{{ url('/projects') }}" class="btn btn-outline-premium px-4 py-2 small fw-bold">our projects</a>
                                 </div>
                             </div>
                         </div>

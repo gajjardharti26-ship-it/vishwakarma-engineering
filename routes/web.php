@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
+    \Illuminate\Support\Facades\Artisan::call('view:clear');
     return view('home');
 });
 

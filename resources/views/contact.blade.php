@@ -85,7 +85,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif
-                    <form action="{{ url('/contact/send') }}" method="POST">
+                    <form action="{{ route('contact.send') }}" method="POST">
                         @csrf
                         <div class="row g-3">
                             <div class="col-md-6">

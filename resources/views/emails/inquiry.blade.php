@@ -9,10 +9,13 @@
     
     <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
         <p style="margin: 0 0 10px 0;"><strong>Name:</strong> {{ $data['name'] }}</p>
+        @if(!empty($data['company']))
+        <p style="margin: 0 0 10px 0;"><strong>Company:</strong> {{ $data['company'] }}</p>
+        @endif
         <p style="margin: 0 0 10px 0;"><strong>Email:</strong> <a href="mailto:{{ $data['email'] }}">{{ $data['email'] }}</a></p>
         <p style="margin: 0 0 10px 0;"><strong>Phone:</strong> {{ $data['phone'] }}</p>
         <p style="margin: 0 0 10px 0;"><strong>Subject:</strong> {{ $data['subject'] }}</p>
-        <p style="margin: 0 0 0 0;"><strong>Product Category:</strong> {{ $data['product'] }}</p>
+        <p style="margin: 0 0 0 0;"><strong>Product / Inquiry:</strong> {{ $data['product'] }}</p>
     </div>
 
     <h3 style="color: #1b3168; margin-top: 25px; margin-bottom: 15px;">Message Details:</h3>

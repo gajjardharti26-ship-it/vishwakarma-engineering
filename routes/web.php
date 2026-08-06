@@ -55,7 +55,7 @@ Route::get('/blogs/{slug}', function ($slug) {
 
 Route::get('/clear-cache', function() {
     \Illuminate\Support\Facades\Artisan::call('optimize:clear');
-    return 'Cache cleared! Your new .env settings are now active. You can go back to the contact page.';
+    return 'Cache cleared! All routes, views, and configurations are now refreshed.';
 });
 
 Route::post('/contact/send', [ContactController::class, 'sendInquiry'])->name('contact.send');
@@ -63,6 +63,8 @@ Route::post('/contact/send', [ContactController::class, 'sendInquiry'])->name('c
 // ==================== GUJARAT CITY PROGRAMMATIC SEO & SITEMAP ROUTES ====================
 Route::get('/sitemap.xml', [SeoCityController::class, 'sitemap'])->name('seo.sitemap');
 Route::get('/locations', [SeoCityController::class, 'index'])->name('seo.locations');
-Route::get('/industrial-equipment-manufacturer-in-{city}', [SeoCityController::class, 'showCityHub'])->name('seo.city.hub');
-Route::get('/{product}-in-{city}', [SeoCityController::class, 'showProductCity'])->name('seo.city.product');
+Route::get('/{slug}', [SeoCityController::class, 'resolveSeoRoute'])
+    ->where('slug', '^[a-zA-Z0-9\-]+-in-[a-zA-Z0-9\-]+$')
+    ->name('seo.city.resolved');
+
 

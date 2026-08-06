@@ -22,20 +22,6 @@
 @endsection
 
 @section('content')
-<!-- BREADCRUMB & HERO -->
-<section class="bg-light py-4 border-bottom">
-    <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-2 small">
-                <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-decoration-none text-muted">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('/products') }}" class="text-decoration-none text-muted">Products</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('/products/category/' . $productData['category_slug']) }}" class="text-decoration-none text-muted">{{ $productData['category'] }}</a></li>
-                <li class="breadcrumb-item active text-primary fw-semibold" aria-current="page">{{ $productData['short_title'] }} in {{ $cityData['name'] }}</li>
-            </ol>
-        </nav>
-    </div>
-</section>
-
 <!-- MAIN HERO SECTION -->
 <section class="py-5 bg-white">
     <div class="container">
@@ -56,7 +42,7 @@
                         <i class="fas fa-file-invoice me-2"></i> Request Best Price Quote
                     </a>
                     <a href="tel:+919924012425" class="btn btn-outline-dark px-4 py-2 fw-semibold">
-                        <i class="fas fa-phone-alt me-2 text-primary"></i> Call: +91 99240 12425
+                        <i class="fas fa-phone-alt fa-flip-horizontal me-2 text-primary"></i> Call: +91 99240 12425
                     </a>
                 </div>
 
@@ -223,45 +209,7 @@
                     </div>
                 </div>
 
-                <!-- Quality Assurance Workflow -->
-                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm mb-5">
-                    <h2 class="h4 fw-bold text-dark mb-3">
-                        Quality Control & Testing Protocols
-                    </h2>
-                    <p class="text-secondary mb-4">
-                        Every single piece of equipment manufactured at Vishwakarma Engineering undergoes stringent stage-wise quality inspections before leaving our plant:
-                    </p>
-                    <div class="row g-3 text-center">
-                        <div class="col-6 col-md-3">
-                            <div class="p-3 rounded-3 bg-light border h-100">
-                                <div class="text-primary-custom fs-3 mb-2"><i class="fas fa-file-contract"></i></div>
-                                <h6 class="fw-bold fs-7 mb-1">Raw Material MTC</h6>
-                                <small class="text-muted">100% Verified Mill Test Certs</small>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="p-3 rounded-3 bg-light border h-100">
-                                <div class="text-primary-custom fs-3 mb-2"><i class="fas fa-water"></i></div>
-                                <h6 class="fw-bold fs-7 mb-1">Hydro Testing</h6>
-                                <small class="text-muted">1.5x Design Pressure Check</small>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="p-3 rounded-3 bg-light border h-100">
-                                <div class="text-primary-custom fs-3 mb-2"><i class="fas fa-x-ray"></i></div>
-                                <h6 class="fw-bold fs-7 mb-1">NDT & DPT</h6>
-                                <small class="text-muted">Dye Penetrant & Radiography</small>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="p-3 rounded-3 bg-light border h-100">
-                                <div class="text-primary-custom fs-3 mb-2"><i class="fas fa-truck-loading"></i></div>
-                                <h6 class="fw-bold fs-7 mb-1">Safe Dispatch</h6>
-                                <small class="text-muted">Protected Transit to {{ $cityData['name'] }}</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- FAQs Accordion -->
                 <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm mb-5">
@@ -286,20 +234,7 @@
                     </div>
                 </div>
 
-                <!-- Industrial Coverage in City & District -->
-                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm mb-5">
-                    <h2 class="h4 fw-bold text-dark mb-3">
-                        Supplying to All Industrial Estates in {{ $cityData['name'] }}
-                    </h2>
-                    <p class="text-secondary mb-3">
-                        We regularly coordinate direct factory shipments, heavy haul logistics, and technical commissioning to all major industrial clusters in {{ $cityData['name'] }} and surrounding regions:
-                    </p>
-                    <div class="d-flex flex-wrap gap-2">
-                        @foreach($cityData['industrial_zones'] as $zone)
-                        <span class="badge bg-light text-dark border px-3 py-2 fs-7 fw-medium"><i class="fas fa-map-marker-alt text-danger me-1"></i> {{ $zone }}</span>
-                        @endforeach
-                    </div>
-                </div>
+
 
                 <!-- Internal Semantic Links (Nearby Cities & Other Products) -->
                 <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
@@ -334,37 +269,49 @@
 
                         @if(session('success'))
                             <div class="alert alert-success small mb-3">
-                                {{ session('success') }}
+                                <i class="fas fa-check-circle me-1"></i> {{ session('success') }}
+                            </div>
+                        @endif
+
+                        @if($errors->any())
+                            <div class="alert alert-danger small mb-3">
+                                <ul class="mb-0 ps-3">
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
                         @endif
 
                         <form action="{{ route('contact.send') }}" method="POST" id="seoInquiryForm">
                             @csrf
+                            <input type="hidden" name="product" value="{{ $productData['title'] }} ({{ $cityData['name'] }})">
+                            <input type="hidden" name="subject" value="Quote Request: {{ $productData['short_title'] }} in {{ $cityData['name'] }}">
                             <input type="hidden" name="inquiry_type" value="SEO Landing Page - {{ $productData['title'] }} ({{ $cityData['name'] }})">
                             
                             <div class="mb-3">
                                 <label class="form-label small fw-semibold text-dark">Your Name *</label>
-                                <input type="text" name="name" class="form-control form-control-sm" placeholder="Enter Full Name" required>
+                                <input type="text" name="name" class="form-control form-control-sm" value="{{ old('name') }}" placeholder="Enter Full Name" required>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label small fw-semibold text-dark">Company / Organization *</label>
-                                <input type="text" name="company" class="form-control form-control-sm" placeholder="Company Name in {{ $cityData['name'] }}" required>
+                                <input type="text" name="company" class="form-control form-control-sm" value="{{ old('company') }}" placeholder="Company Name in {{ $cityData['name'] }}" required>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label small fw-semibold text-dark">Phone Number (Mobile) *</label>
-                                <input type="tel" name="phone" class="form-control form-control-sm" placeholder="e.g. +91 98765 43210" required>
+                                <input type="tel" name="phone" class="form-control form-control-sm" value="{{ old('phone') }}" placeholder="e.g. +91 98765 43210" required>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label small fw-semibold text-dark">Email Address *</label>
-                                <input type="email" name="email" class="form-control form-control-sm" placeholder="name@company.com" required>
+                                <input type="email" name="email" class="form-control form-control-sm" value="{{ old('email') }}" placeholder="name@company.com" required>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label small fw-semibold text-dark">Required Capacity / Specifications</label>
-                                <textarea name="message" rows="3" class="form-control form-control-sm" placeholder="Please mention capacity (Liters/KL), MOC (SS304/SS316/MS), operating pressure, or delivery timeline for {{ $cityData['name'] }} plant...">Interested in quotation for {{ $productData['title'] }} for our plant in {{ $cityData['name'] }}.</textarea>
+                                <textarea name="message" rows="3" class="form-control form-control-sm" placeholder="Please mention capacity (Liters/KL), MOC (SS304/SS316/MS), operating pressure, or delivery timeline for {{ $cityData['name'] }} plant..." required>{{ old('message', "Interested in quotation for {$productData['title']} for our plant in {$cityData['name']}.") }}</textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary-custom w-100 py-2 fw-semibold">
@@ -375,11 +322,11 @@
 
                     <!-- Direct Contact Card -->
                     <div class="card border-0 shadow-sm rounded-4 p-4 text-white" style="background-color: var(--primary-blue);">
-                        <h5 class="fw-bold mb-3"><i class="fas fa-headset text-warning me-2"></i> Direct Sales Support</h5>
+                        <h5 class="fw-bold mb-3"><i class="fas fa-headset text-white me-2"></i> Direct Sales Support</h5>
                         <p class="small text-white-50 mb-3">Speak directly with our senior process equipment engineers for technical sizing & pricing assistance.</p>
                         
                         <div class="d-flex align-items-center mb-3">
-                            <i class="fas fa-phone-alt fs-5 me-3 text-warning"></i>
+                            <i class="fas fa-phone-alt fa-flip-horizontal fs-5 me-3 text-white"></i>
                             <div>
                                 <small class="text-white-50 d-block">Direct Hotline</small>
                                 <a href="tel:+919924012425" class="text-white fw-bold text-decoration-none">+91 99240 12425</a>
@@ -387,7 +334,7 @@
                         </div>
 
                         <div class="d-flex align-items-center mb-3">
-                            <i class="fas fa-envelope fs-5 me-3 text-warning"></i>
+                            <i class="fas fa-envelope fs-5 me-3 text-white"></i>
                             <div>
                                 <small class="text-white-50 d-block">Official Email</small>
                                 <a href="mailto:vishwakarma.engineers.co@gmail.com" class="text-white small text-decoration-none">vishwakarma.engineers.co@gmail.com</a>
@@ -395,7 +342,7 @@
                         </div>
 
                         <div class="d-flex align-items-start">
-                            <i class="fas fa-map-marker-alt fs-5 me-3 text-warning mt-1"></i>
+                            <i class="fas fa-map-marker-alt fs-5 me-3 text-white mt-1"></i>
                             <div>
                                 <small class="text-white-50 d-block">Manufacturing Facility</small>
                                 <span class="small text-white-50">Plot No. 5639/E, Phase-II, GIDC Estate, Vatva, Ahmedabad - 382445, Gujarat</span>

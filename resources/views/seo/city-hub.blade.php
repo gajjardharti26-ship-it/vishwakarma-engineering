@@ -6,19 +6,6 @@
 @section('canonical', $canonicalUrl)
 
 @section('content')
-<!-- BREADCRUMB & HERO -->
-<section class="bg-light py-4 border-bottom">
-    <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-2 small">
-                <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-decoration-none text-muted">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('/locations') }}" class="text-decoration-none text-muted">Locations</a></li>
-                <li class="breadcrumb-item active text-primary fw-semibold" aria-current="page">{{ $cityData['name'] }}, Gujarat</li>
-            </ol>
-        </nav>
-    </div>
-</section>
-
 <!-- MAIN HERO SECTION -->
 <section class="py-5 bg-white">
     <div class="container">
@@ -39,7 +26,7 @@
                         <i class="fas fa-th-list me-2"></i> Browse Products for {{ $cityData['name'] }}
                     </a>
                     <a href="tel:+919924012425" class="btn btn-outline-dark px-4 py-2 fw-semibold">
-                        <i class="fas fa-phone-alt me-2 text-primary"></i> Call: +91 99240 12425
+                        <i class="fas fa-phone-alt fa-flip-horizontal me-2 text-primary"></i> Call: +91 99240 12425
                     </a>
                 </div>
 

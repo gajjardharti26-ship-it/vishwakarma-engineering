@@ -21,10 +21,19 @@ class ContactController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
-            'product' => 'required|string',
-            'subject' => 'required|string|max:255',
+            'product' => 'nullable|string',
+            'subject' => 'nullable|string|max:255',
+            'company' => 'nullable|string|max:255',
             'message' => 'required|string',
         ]);
+
+        if (empty($validatedData['product'])) {
+            $validatedData['product'] = $request->input('inquiry_type', 'Industrial Process Equipment');
+        }
+
+        if (empty($validatedData['subject'])) {
+            $validatedData['subject'] = 'Inquiry for ' . $validatedData['product'];
+        }
 
         // 2. Define the recipient from your .env
         $recipient = config('mail.from.address', 'vishwakarma.engineers.co@gmail.com');

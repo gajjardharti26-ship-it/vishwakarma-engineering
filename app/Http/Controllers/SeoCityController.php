@@ -9,6 +9,28 @@ use App\Services\SeoCityService;
 class SeoCityController extends Controller
 {
     /**
+     * Unified SEO Route Resolver for any URL matching *-in-*
+     */
+    public function resolveSeoRoute(string $slug)
+    {
+        $slug = strtolower(trim($slug));
+        $lastInPos = strrpos($slug, '-in-');
+
+        if ($lastInPos === false) {
+            abort(404);
+        }
+
+        $prefix = substr($slug, 0, $lastInPos);
+        $citySlug = substr($slug, $lastInPos + 4);
+
+        if ($prefix === 'industrial-equipment-manufacturer') {
+            return $this->showCityHub($citySlug);
+        }
+
+        return $this->showProductCity($prefix, $citySlug);
+    }
+
+    /**
      * Show Product in City SEO Landing Page (e.g. /pressure-vessel-in-ahmedabad)
      */
     public function showProductCity(string $product, string $city)

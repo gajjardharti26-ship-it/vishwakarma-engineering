@@ -34,7 +34,7 @@
                     {{ $productData['title'] }} Manufacturer & Supplier in <span class="text-primary-custom">{{ $cityData['name'] }}, Gujarat</span>
                 </h1>
                 <p class="lead text-secondary fs-6 mb-4">
-                    Vishwakarma Engineering is a leading manufacturer, supplier, and exporter of high-precision <strong>{{ $productData['title'] }}</strong> serving chemical, pharmaceutical, bulk drug, and process manufacturing facilities across <strong>{{ $cityData['name'] }}</strong> and {{ $cityData['district'] }} district.
+                    Vishwakarma Engineering is a leading manufacturer, supplier, and exporter of high-precision <strong>{{ $productData['title'] }}</strong> serving chemical, pharmaceutical, bulk drug, and process manufacturing facilities across <strong>{{ $cityData['name'] }}</strong>@if(strcasecmp($cityData['name'], $cityData['district']) !== 0 && !str_contains(strtolower($cityData['district']), strtolower($cityData['name']))) and {{ $cityData['district'] }} district@else and surrounding Gujarat industrial estates@endif.
                 </p>
 
                 <div class="d-flex flex-wrap gap-3 mb-4">
@@ -115,7 +115,7 @@
                 <!-- Overview -->
                 <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm mb-5">
                     <h2 class="h4 fw-bold text-dark mb-3">
-                        Engineered for Industrial Facilities in {{ $cityData['name'] }} & {{ $cityData['district'] }}
+                        Engineered for Industrial Facilities in {{ $cityData['name'] }}@if(strcasecmp($cityData['name'], $cityData['district']) !== 0 && !str_contains(strtolower($cityData['district']), strtolower($cityData['name']))) & {{ $cityData['district'] }} District@else, Gujarat@endif
                     </h2>
                     <p class="text-secondary lh-lg mb-4">
                         {{ $productData['description'] }} Vishwakarma Engineering specializes in designing, fabricating, testing, and installing robust process equipment tailored for the demanding operational requirements of companies located across <strong>{{ $zonesText }}</strong>.

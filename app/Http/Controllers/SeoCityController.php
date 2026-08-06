@@ -318,7 +318,9 @@ class SeoCityController extends Controller
             ],
             'areaServed' => [
                 '@type' => 'AdministrativeArea',
-                'name' => "{$city['name']}, {$city['district']}, Gujarat"
+                'name' => (strcasecmp($city['name'], $city['district']) === 0 || str_contains(strtolower($city['district']), strtolower($city['name'])))
+                    ? "{$city['name']}, Gujarat"
+                    : "{$city['name']}, {$city['district']} District, Gujarat"
             ],
             'priceRange' => '₹₹₹'
         ];

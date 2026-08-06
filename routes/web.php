@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SeoCityController;
 
 Route::get('/', function () {
     \Illuminate\Support\Facades\Artisan::call('view:clear');
@@ -57,5 +58,11 @@ Route::get('/clear-cache', function() {
     return 'Cache cleared! Your new .env settings are now active. You can go back to the contact page.';
 });
 
-
 Route::post('/contact/send', [ContactController::class, 'sendInquiry'])->name('contact.send');
+
+// ==================== GUJARAT CITY PROGRAMMATIC SEO & SITEMAP ROUTES ====================
+Route::get('/sitemap.xml', [SeoCityController::class, 'sitemap'])->name('seo.sitemap');
+Route::get('/locations', [SeoCityController::class, 'index'])->name('seo.locations');
+Route::get('/industrial-equipment-manufacturer-in-{city}', [SeoCityController::class, 'showCityHub'])->name('seo.city.hub');
+Route::get('/{product}-in-{city}', [SeoCityController::class, 'showProductCity'])->name('seo.city.product');
+

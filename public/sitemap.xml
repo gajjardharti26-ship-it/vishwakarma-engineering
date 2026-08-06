@@ -1,48 +1,413 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Static Pages -->
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/about</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/products</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/projects</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/gallery</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/industries</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/contact</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/blogs</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/locations</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-<loc>https://vishwakarma-engineering.onrender.com/</loc>
-</url>
-
-<url>
-<loc>https://vishwakarma-engineering.onrender.com/about</loc>
-</url>
-
-<url>
-<loc>https://vishwakarma-engineering.onrender.com/projects</loc>
-</url>
-
-<url>
-<loc>https://vishwakarma-engineering.onrender.com/contact</loc>
-</url>
-<url>
+  <!-- Category Pages -->
+  <url>
     <loc>https://vishwakarma-engineering.onrender.com/products/category/industrial-vessels</loc>
-</url>
-<url>
-    <loc>https://vishwakarma-engineering.onrender.com/products/category/storage-tanks</loc>
-</url>
-<url>
-    <loc>https://vishwakarma-engineering.onrender.com/products/category/agitation-mixing</loc>
-</url>
-<url>
-    <loc>https://vishwakarma-engineering.onrender.com/products/category/fabrication-structural</loc>
-</url>
-<url>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vishwakarma-engineering.onrender.com/products/category/reactors</loc>
-</url>
-<url>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/products/category/storage-tanks</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vishwakarma-engineering.onrender.com/products/category/columns-towers</loc>
-</url>
-<url>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/products/category/agitation-mixing</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vishwakarma-engineering.onrender.com/products/category/etp-effluent-treatment</loc>
-</url>
-<url>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vishwakarma-engineering.onrender.com/products/category/fabrication-structural</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vishwakarma-engineering.onrender.com/products/category/assemblies-special</loc>
-</url>
-<url>
-    <loc>https://vishwakarma-engineering.onrender.com/products/category/assemblies-special</loc>
-</url>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
+  <!-- Direct Product Pages -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/jacketed-vessel</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/pressure-vessel</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/mixing-vessel</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/movable-vessel</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/hydraulic-movable-vessel</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/limpet-coil-vessel</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/ms-reactor</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/ss-reactor</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/ms-ss-reactor</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/reactor-gearbox</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/ms-storage-tank</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/ss-storage-tank</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/chemical-storage-tank</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/raw-material-tank</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/ms-ketchi-column</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/ss-ketchi-column</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/column-structure</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/ms-stirrer</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/ss-stirrer</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/gear-stirrer-assembly</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/mixing-assemblies</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/complete-etp-plant</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/primary-settling-tank</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/secondary-treatment-tank</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/holding-tank</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/sand-filter</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/carbon-filter</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/pipeline-work</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/structural-fabrication</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/platform-support</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/gear-structure-fab</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/gear-assembly</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/structural-assembly</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/products/customized-equipment</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Gujarat City Hub Pages (50 Cities) -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-surat</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-rajkot</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-bharuch</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-dahej</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-vapi</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-gandhinagar</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-bhavnagar</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-jamnagar</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-morbi</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-valsad</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-anand</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-mehsana</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-navsari</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-halol</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-mundra</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-gandhidham</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-sanand</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-surendranagar</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-junagadh</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-porbandar</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-himatnagar</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-nadiad</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-godhra</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-palanpur</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-patan</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-amreli</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-veraval</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-botad</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-bhuj</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-kheda</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-dahod</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-somnath</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-vyara</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-modasa</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-chhatral</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-kadi</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-jhagadia</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-panoli</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-savli</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-changodar</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-naroda</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-vatva</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-hazira</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-sachin</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-nandesari</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-shapar</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/industrial-equipment-manufacturer-in-metoda</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+
+  <!-- Product in City Target Landing Pages (Major Hubs & Key Cities) -->
+  <!-- Ahmedabad -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/jacketed-vessel-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/mixing-vessel-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/limpet-coil-vessel-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-reactor-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-ss-reactor-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/reactor-gearbox-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/primary-settling-tank-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/sand-filter-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/carbon-filter-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pipeline-work-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/structural-fabrication-in-ahmedabad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Surat -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/jacketed-vessel-in-surat</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-surat</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-reactor-in-surat</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-surat</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-surat</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-surat</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-surat</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-surat</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pipeline-work-in-surat</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Vadodara -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/jacketed-vessel-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-reactor-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-ss-reactor-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-ketchi-column-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-ketchi-column-in-vadodara</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Ankleshwar -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/jacketed-vessel-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/limpet-coil-vessel-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-reactor-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-ketchi-column-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-ketchi-column-in-ankleshwar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Dahej -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/jacketed-vessel-in-dahej</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-dahej</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-reactor-in-dahej</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-dahej</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-dahej</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-dahej</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-dahej</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-dahej</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Vapi -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/jacketed-vessel-in-vapi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-vapi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-reactor-in-vapi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-vapi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-vapi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-vapi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-vapi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-vapi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Rajkot -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-rajkot</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-rajkot</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-rajkot</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/structural-fabrication-in-rajkot</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/gear-assembly-in-rajkot</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Morbi -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-morbi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-morbi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-morbi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/mixing-vessel-in-morbi</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Sanand -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-sanand</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-sanand</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-sanand</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/structural-fabrication-in-sanand</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-sanand</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Bharuch -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-reactor-in-bharuch</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-bharuch</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-bharuch</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-bharuch</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-bharuch</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Gandhinagar -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-gandhinagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-gandhinagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-gandhinagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-gandhinagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Bhavnagar -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-bhavnagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-bhavnagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-bhavnagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/structural-fabrication-in-bhavnagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Jamnagar -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-jamnagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-jamnagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-jamnagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-jamnagar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Valsad -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/jacketed-vessel-in-valsad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-valsad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-valsad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-valsad</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Anand -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/mixing-vessel-in-anand</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-anand</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-anand</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-anand</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Mehsana -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-mehsana</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-mehsana</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-mehsana</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Navsari -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-navsari</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-navsari</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-navsari</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Halol -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-halol</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-halol</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/structural-fabrication-in-halol</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Mundra -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-mundra</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-mundra</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-mundra</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Gandhidham -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-gandhidham</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-gandhidham</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Jhagadia -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-jhagadia</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-jhagadia</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-jhagadia</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Panoli -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-panoli</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/jacketed-vessel-in-panoli</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-panoli</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Savli -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-savli</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/structural-fabrication-in-savli</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Changodar -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-changodar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-changodar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/mixing-vessel-in-changodar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Naroda -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-reactor-in-naroda</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-naroda</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-naroda</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Vatva -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/jacketed-vessel-in-vatva</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-vatva</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-reactor-in-vatva</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-vatva</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-vatva</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-storage-tank-in-vatva</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-vatva</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-vatva</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Hazira -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-hazira</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-storage-tank-in-hazira</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-hazira</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/pipeline-work-in-hazira</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Sachin -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-sachin</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-sachin</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/chemical-storage-tank-in-sachin</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Nandesari -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/ms-reactor-in-nandesari</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/ss-reactor-in-nandesari</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/complete-etp-plant-in-nandesari</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Shapar -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-shapar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/structural-fabrication-in-shapar</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Metoda -->
+  <url><loc>https://vishwakarma-engineering.onrender.com/pressure-vessel-in-metoda</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vishwakarma-engineering.onrender.com/gear-assembly-in-metoda</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>

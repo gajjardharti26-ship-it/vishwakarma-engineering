@@ -7,6 +7,17 @@
     <title>@yield('title', 'Vishwakarma Engineering | Leading Industrial Equipment Manufacturer')</title>
     <meta name="description" content="@yield('meta_description', 'Vishwakarma Engineering is a premier manufacturer of industrial vessels, chemical reactors, storage tanks, and ETP plants.')">
     <meta name="keywords" content="@yield('meta_keywords', 'pressure vessel manufacturer in Ahmedabad, pressure vessels in Ahmedabad, storage tank manufacturer in Ahmedabad, industrial storage tanks in Ahmedabad, chemical reactor manufacturer in Ahmedabad, process equipment manufacturer in Ahmedabad, stainless steel tanks in Ahmedabad, industrial reactors in Ahmedabad, reactor vessel manufacturer in Ahmedabad, industrial pressure vessels in Ahmedabad, pressure vessel manufacturer, pressure vessels, storage tank manufacturer, industrial storage tanks, chemical reactor manufacturer, process equipment manufacturer, stainless steel tanks, industrial reactors, reactor vessel manufacturer, industrial pressure vessels')">
+    <link rel="canonical" href="@yield('canonical', url()->current())">
+    
+    <!-- Open Graph / SEO Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="@yield('title', 'Vishwakarma Engineering | Leading Industrial Equipment Manufacturer')">
+    <meta property="og:description" content="@yield('meta_description', 'Vishwakarma Engineering is a premier manufacturer of industrial vessels, chemical reactors, storage tanks, and ETP plants.')">
+    <meta property="og:url" content="@yield('canonical', url()->current())">
+    <meta property="og:image" content="@yield('og_image', asset('assets/images/logo(1).jpeg'))">
+    <meta name="robots" content="index, follow">
+    @yield('meta_tags')
+    @yield('schema')
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">

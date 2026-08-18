@@ -14,7 +14,7 @@
     <meta property="og:title" content="@yield('title', 'Vishwakarma Engineering | Leading Industrial Equipment Manufacturer')">
     <meta property="og:description" content="@yield('meta_description', 'Vishwakarma Engineering is a premier manufacturer of industrial vessels, chemical reactors, storage tanks, and ETP plants.')">
     <meta property="og:url" content="@yield('canonical', url()->current())">
-    <meta property="og:image" content="@yield('og_image', asset('assets/images/logo(1).jpeg'))">
+    <meta property="og:image" content="@yield('og_image', asset('assets/images/logo.jpeg'))">
     <meta name="robots" content="index, follow">
     @yield('meta_tags')
     @yield('schema')

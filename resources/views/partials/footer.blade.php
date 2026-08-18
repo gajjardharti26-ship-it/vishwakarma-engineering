@@ -22,7 +22,7 @@
                 <ul class="footer-links">
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('/about') }}">About Us</a></li>
-                    <li><a href="{{ url('/products') }}">Products</a></li>
+                    <li><a href="{{ url('/blogs') }}">Blog</a></li>
                     <li><a href="{{ url('/projects') }}">Projects</a></li>
                     <li><a href="{{ url('/contact') }}">Contact Us</a></li>
                 </ul>

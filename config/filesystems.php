@@ -41,7 +41,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => rtrim(env('APP_URL', 'https://vishwakarma-engineering.onrender.com'), '/').'/storage',
+            'url' => rtrim(env('APP_URL', 'https://vishwakarmaengineering.co'), '/').'/storage',
             'visibility' => 'public',
             'throw' => false,
             'report' => false,

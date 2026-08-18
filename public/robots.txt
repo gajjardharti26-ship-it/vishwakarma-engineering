@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://vishwakarma-engineering.onrender.com/sitemap.xml
+Sitemap: https://vishwakarmaengineering.co/sitemap.xml

@@ -36,7 +36,7 @@ class ContactController extends Controller
         }
 
         // 2. Define the recipient from your .env
-        $recipient = config('mail.from.address', 'vishwakarma.engineers.co@gmail.com');
+        $recipient = config('mail.from.address', 'info@vishwakarmaengineering.co');
         
         // 3. Send out the email using Laravel's robust mailer
         try {

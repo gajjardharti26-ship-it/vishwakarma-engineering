@@ -50,7 +50,7 @@
                     </li>
                     <li class="d-flex mb-3">
                         <i class="fas fa-envelope text-white mt-1 me-3"></i>
-                        <a href="mailto:vishwakarma.engineers.co@gmail.com" class="text-white-50 small text-decoration-none">vishwakarma.engineers.co@gmail.com</a>
+                        <a href="mailto:info@vishwakarmaengineering.co" class="text-white-50 small text-decoration-none">info@vishwakarmaengineering.co</a>
                     </li>
                 </ul>
             </div>

@@ -5,7 +5,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <small>
-                        <i class="fas fa-envelope me-2 text-white"></i> <a href="mailto:vishwakarma.engineers.co@gmail.com" class="text-white text-decoration-none">vishwakarma.engineers.co@gmail.com</a>
+                        <i class="fas fa-envelope me-2 text-white"></i> <a href="mailto:info@vishwakarmaengineering.co" class="text-white text-decoration-none">info@vishwakarmaengineering.co</a>
                         <span class="ms-3"><i class="fas fa-phone me-2 text-white"></i> <a href="tel:+919924012425" class="text-white text-decoration-none">+91 99240 12425</a></span>
                     </small>
                 </div>

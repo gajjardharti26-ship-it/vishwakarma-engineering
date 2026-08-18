@@ -54,7 +54,7 @@
                         </div>
                         <div class="ms-4">
                             <h5 class="outfit mb-1">Email Address</h5>
-                            <p class="text-muted mb-0"><a href="mailto:vishwakarma.engineers.co@gmail.com" class="text-muted text-decoration-none">vishwakarma.engineers.co@gmail.com</a></p>
+                            <p class="text-muted mb-0"><a href="mailto:info@vishwakarmaengineering.co" class="text-muted text-decoration-none">info@vishwakarmaengineering.co</a></p>
                         </div>
                     </div>
 

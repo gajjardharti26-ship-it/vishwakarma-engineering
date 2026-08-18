@@ -337,7 +337,7 @@
                             <i class="fas fa-envelope fs-5 me-3 text-white"></i>
                             <div>
                                 <small class="text-white-50 d-block">Official Email</small>
-                                <a href="mailto:vishwakarma.engineers.co@gmail.com" class="text-white small text-decoration-none">vishwakarma.engineers.co@gmail.com</a>
+                                <a href="mailto:info@vishwakarmaengineering.co" class="text-white small text-decoration-none">info@vishwakarmaengineering.co</a>
                             </div>
                         </div>
 

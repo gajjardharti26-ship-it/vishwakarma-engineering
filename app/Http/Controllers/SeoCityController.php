@@ -306,7 +306,7 @@ class SeoCityController extends Controller
             'name' => "Vishwakarma Engineering - {$city['name']} Supply Division",
             'image' => asset('assets/images/logo(1).jpeg'),
             'telephone' => '+919924012425',
-            'email' => 'vishwakarma.engineers.co@gmail.com',
+            'email' => 'info@vishwakarmaengineering.co',
             'url' => $canonicalUrl,
             'address' => [
                 '@type' => 'PostalAddress',

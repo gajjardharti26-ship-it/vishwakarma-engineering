@@ -26,7 +26,7 @@
                                 <h1 class="display-3 fw-bold mb-4 animated fadeInUp outfit text-white hero-title"><span class="text-accent-industrial">Precision</span> Engineering <br>for Industrial Excellence</h1>
                                 <p class="mb-4 animated fadeInUp delay-1s fs-5" style="color: rgba(255,255,255,0.9); max-width: 650px;">Manufacturing high-quality Pressure Vessels, Chemical Reactors, Storage Tanks, and Process Equipment with uncompromising quality, precision, and reliability since 2007.</p>
                                 <div class="animated fadeInUp delay-2s d-flex justify-content-center justify-content-md-start align-items-center gap-3 mt-4 flex-wrap">
-                                    <a href="{{ url('/products') }}" class="btn btn-primary-premium px-4 py-2 small fw-bold">explore products</a>
+                                    <a href="{{ url('/about') }}" class="btn btn-primary-premium px-4 py-2 small fw-bold">discover more</a>
                                     <a href="{{ url('/contact') }}" class="btn btn-outline-premium px-4 py-2 small fw-bold">request quote</a>
                                 </div>
                             </div>

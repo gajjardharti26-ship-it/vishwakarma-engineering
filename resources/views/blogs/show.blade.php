@@ -180,8 +180,8 @@
                     <div class="p-4 p-md-5 rounded-4 shadow-sm text-white text-center" style="background: linear-gradient(135deg, #1b3168 0%, #006cb7 100%);">
                         <h3 class="outfit fw-bold mb-3">Ready to Discuss Your Custom Fabrication Project?</h3>
                         <p class="text-white text-opacity-90 small mb-4 mx-auto" style="max-width: 600px;">Share your design specifications or process datasheets with our senior engineering team for an accurate quotation and technical review.</p>
-                        <a href="{{ url('/contact') }}" class="btn btn-light px-4 py-2 rounded-pill fw-semibold text-primary-custom shadow-sm me-2" style="font-size: 0.9rem;">Request Technical Quote</a>
-                        <a href="{{ url('/products') }}" class="btn btn-outline-light px-4 py-2 rounded-pill fw-semibold" style="font-size: 0.9rem;">Explore Products</a>
+                        <a href="tel:+919924012425" class="btn btn-outline-light px-3 py-2 rounded-pill fw-semibold me-2" style="font-size: 0.88rem;"><i class="fas fa-phone-alt me-1"></i> +91 99240 12425</a>
+                        <a href="{{ url('/contact') }}" class="btn btn-light px-4 py-2 rounded-pill fw-semibold text-primary-custom shadow-sm" style="font-size: 0.88rem;">Request Technical Quote</a>
                     </div>
                 </article>
             </div>

@@ -32,33 +32,33 @@
         <div class="row g-4">
             @foreach($blogs as $slugKey => $blogItem)
             <div class="col-lg-4 col-md-6">
-                <article class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border d-flex flex-column">
+                <article class="blog-card-premium h-100 bg-white rounded-3 overflow-hidden shadow-sm border d-flex flex-column">
                     <div class="blog-img-wrapper position-relative">
-                        <img src="{{ asset($blogItem['image']) }}" class="img-fluid w-100" alt="{{ $blogItem['title'] }}" loading="lazy" style="height: 230px; object-fit: cover;">
+                        <img src="{{ asset($blogItem['image']) }}" class="img-fluid w-100" alt="{{ $blogItem['title'] }}" loading="lazy" style="height: 190px; object-fit: cover;">
                         <div class="blog-date-tag">
                             <span class="day">{{ $blogItem['date_day'] }}</span>
                             <span class="month">{{ $blogItem['date_month'] }}</span>
                         </div>
                         <div class="blog-category-badge">
-                            <span class="badge bg-primary-custom text-white px-3 py-1 rounded-pill small shadow-sm">{{ $blogItem['category_badge'] }}</span>
+                            <span class="badge bg-primary-custom text-white px-2 py-1 rounded-pill small shadow-sm" style="font-size: 0.72rem;">{{ $blogItem['category_badge'] }}</span>
                         </div>
                     </div>
-                    <div class="p-4 d-flex flex-column flex-grow-1">
-                        <div class="d-flex align-items-center justify-content-between mb-2 text-muted small">
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex align-items-center justify-content-between mb-2 text-muted x-small">
                             <span><i class="far fa-clock me-1 text-secondary-blue"></i> {{ $blogItem['read_time'] }}</span>
                             <span><i class="far fa-calendar-check me-1 text-secondary-blue"></i> {{ $blogItem['date_year'] }}</span>
                         </div>
-                        <h3 class="outfit h5 fw-bold mb-3">
+                        <h3 class="outfit fw-bold mb-2" style="font-size: 1.05rem; line-height: 1.35; min-height: 42px;">
                             <a href="{{ url('/blogs/' . $blogItem['slug']) }}" class="text-dark text-decoration-none hover-primary-link">
                                 {{ $blogItem['short_title'] ?? $blogItem['title'] }}
                             </a>
                         </h3>
-                        <p class="text-muted small mb-4 flex-grow-1" style="line-height: 1.6;">
-                            {{ $blogItem['excerpt'] }}
+                        <p class="blog-card-desc mb-3 flex-grow-1">
+                            {{ \Illuminate\Support\Str::limit($blogItem['excerpt'], 105) }}
                         </p>
-                        <div class="pt-3 border-top d-flex align-items-center justify-content-between mt-auto">
-                            <a href="{{ url('/blogs/' . $blogItem['slug']) }}" class="btn-industrial-link fw-bold text-decoration-none">
-                                Read Full Guide <i class="fas fa-arrow-right ms-2"></i>
+                        <div class="pt-2 border-top d-flex align-items-center justify-content-between mt-auto">
+                            <a href="{{ url('/blogs/' . $blogItem['slug']) }}" class="btn-industrial-link fw-bold text-decoration-none small">
+                                Read Full Guide <i class="fas fa-arrow-right ms-1"></i>
                             </a>
                         </div>
                     </div>
@@ -77,8 +77,8 @@
                         <p class="mb-0 text-white text-opacity-90 small">Our engineering team designs and manufactures tailor-made ASME & IS compliant process equipment to your exact datasheets.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-                        <a href="{{ url('/contact') }}" class="btn btn-light px-3 py-2 rounded-pill fw-semibold text-primary-custom shadow-sm me-2" style="font-size: 0.88rem;">Request a Quote</a>
-                        <a href="{{ url('/products') }}" class="btn btn-outline-light px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.88rem;">View Products</a>
+                        <a href="tel:+919924012425" class="btn btn-outline-light px-3 py-2 rounded-pill fw-semibold me-2" style="font-size: 0.88rem;"><i class="fas fa-phone-alt me-1"></i> +91 99240 12425</a>
+                        <a href="{{ url('/contact') }}" class="btn btn-light px-3 py-2 rounded-pill fw-semibold text-primary-custom shadow-sm" style="font-size: 0.88rem;">Request a Quote</a>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
         border-color: #cbd5e1 !important;
     }
     .blog-img-wrapper {
-        height: 230px;
+        height: 190px;
         overflow: hidden;
     }
     .blog-img-wrapper img {
@@ -111,14 +111,26 @@
     .blog-card-premium:hover .blog-img-wrapper img {
         transform: scale(1.08);
     }
+    .blog-card-desc {
+        font-size: 0.84rem;
+        color: #64748b;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .x-small {
+        font-size: 0.78rem;
+    }
     .blog-date-tag {
         position: absolute;
-        bottom: 12px;
-        left: 12px;
+        bottom: 10px;
+        left: 10px;
         background: #006cb7;
         color: #ffffff;
-        padding: 6px 12px;
-        border-radius: 8px;
+        padding: 4px 10px;
+        border-radius: 6px;
         text-align: center;
         line-height: 1.15;
         box-shadow: 0 4px 12px rgba(0,0,0,0.25);
@@ -126,11 +138,11 @@
     .blog-date-tag .day {
         display: block;
         font-weight: 800;
-        font-size: 1.15rem;
+        font-size: 1rem;
     }
     .blog-date-tag .month {
         display: block;
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;

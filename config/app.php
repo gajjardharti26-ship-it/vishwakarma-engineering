@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://vishwakarmaengineering.co'),
+    'url' => env('APP_URL', 'https://www.vishwakarmaengineering.co'),
 
     /*
     |--------------------------------------------------------------------------

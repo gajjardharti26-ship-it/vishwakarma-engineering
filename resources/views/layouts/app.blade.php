@@ -60,15 +60,17 @@
         
         /* Navbar */
         .navbar {
-            background-color: var(--white);
+            background-color: #ffffff !important;
             padding: 4px 0;
             transition: var(--transition);
+            z-index: 1040;
         }
         
         .navbar.scrolled {
             padding: 4px 0;
-            background-color: rgba(255, 255, 255, 0.98);
+            background-color: #ffffff !important;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            z-index: 1050 !important;
         }
 
         /* Brand Styles */

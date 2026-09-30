@@ -14,22 +14,20 @@
 @endif
 @if(!empty($blog['faqs']))
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    @foreach($blog['faqs'] as $index => $faq)
-    {
-      "@type": "Question",
-      "name": "{{ addslashes($faq['question']) }}",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "{{ addslashes($faq['answer']) }}"
-      }
-    }{{ $index < count($blog['faqs']) - 1 ? ',' : '' }}
-    @endforeach
-  ]
-}
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'FAQPage',
+    'mainEntity' => array_map(function($faq) {
+        return [
+            '@type' => 'Question',
+            'name' => $faq['question'] ?? '',
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => $faq['answer'] ?? ''
+            ]
+        ];
+    }, $blog['faqs'])
+], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
 </script>
 @endif
 @endsection
@@ -257,7 +255,7 @@
                         </div>
                         <h5 class="outfit fw-bold mb-2">Technical Inquiry</h5>
                         <p class="small text-white text-opacity-80 mb-3">Speak directly with our process fabrication engineers for custom equipment design.</p>
-                        <a href="tel:+919825000000" class="btn btn-outline-light btn-sm w-100 rounded-pill mb-2"><i class="fas fa-phone-alt me-1"></i> Call Engineering Cell</a>
+                        <a href="tel:+919924012425" class="btn btn-outline-light btn-sm w-100 rounded-pill mb-2"><i class="fas fa-phone-alt me-1"></i> Call +91 99240 12425</a>
                         <a href="{{ url('/contact') }}" class="btn btn-light btn-sm w-100 rounded-pill text-primary-custom fw-bold"><i class="fas fa-envelope me-1"></i> Send Online Inquiry</a>
                     </div>
                 </aside>

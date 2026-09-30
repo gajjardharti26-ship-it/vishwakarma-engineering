@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SeoCityController;
+use App\Http\Controllers\BlogController;
 
 Route::get('/', function () {
     \Illuminate\Support\Facades\Artisan::call('view:clear');
@@ -43,8 +44,6 @@ Route::get('/gallery', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
-
-use App\Http\Controllers\BlogController;
 
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');

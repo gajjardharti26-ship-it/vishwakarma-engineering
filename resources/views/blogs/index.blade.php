@@ -7,15 +7,13 @@
 
 @section('content')
 <!-- Page Header -->
-<div class="page-header position-relative text-white py-5" style="background: linear-gradient(135deg, rgba(27, 49, 104, 0.95) 0%, rgba(0, 108, 183, 0.90) 100%), url('{{ asset('assets/images/vessal.jpg') }}') center/cover no-repeat; min-height: 280px; display: flex; align-items: center;">
-    <div class="container text-center position-relative" style="z-index: 2;">
-        <span class="badge bg-white text-primary-custom px-3 py-2 rounded-pill fw-bold text-uppercase mb-3 shadow-sm" style="letter-spacing: 1.5px; font-size: 0.8rem;">Knowledge & Technical Hub</span>
-        <h1 class="display-4 fw-bold outfit text-white mb-3">Engineering Insights & Technical Articles</h1>
-        <p class="lead text-white text-opacity-90 mx-auto mb-4" style="max-width: 720px;">Deep-dive technical guides on industrial pressure vessels, chemical reactors, storage equipment, and heavy fabrication standards.</p>
+<div class="page-header" style="background: url('{{ asset('assets/images/about_banner.jpg') }}');">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold outfit text-white mb-3">Blogs & Insights</h1>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb justify-content-center text-capitalize small fw-bold m-0 bg-transparent p-0">
+            <ol class="breadcrumb justify-content-center text-capitalize small m-0 fw-bold">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-white text-opacity-75 text-decoration-none"><i class="fas fa-home me-1"></i> Home</a></li>
-                <li class="breadcrumb-item active text-white" aria-current="page">Blogs & Insights</li>
+                <li class="breadcrumb-item active text-white" aria-current="page">Blogs</li>
             </ol>
         </nav>
     </div>
@@ -23,15 +21,11 @@
 
 <section class="bg-light-industrial py-5">
     <div class="container py-3">
-        <!-- Section Subtitle & Quick Stats Bar -->
-        <div class="row align-items-center justify-content-between mb-5">
-            <div class="col-lg-7">
-                <h6 class="text-secondary-blue fw-bold text-uppercase small mb-1" style="letter-spacing: 2px;">Latest Published Articles</h6>
-                <h2 class="display-6 fw-bold outfit text-primary-custom mb-0">Industrial Fabrication & Process Engineering Knowledge</h2>
-            </div>
-            <div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
-                <span class="text-muted small"><i class="fas fa-book-open me-2 text-secondary-blue"></i> Showing {{ count($blogs) }} In-Depth Technical Guides</span>
-            </div>
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+            <h6 class="text-secondary-blue fw-bold text-uppercase small mb-2" style="letter-spacing: 2px;">Technical & Engineering Articles</h6>
+            <h2 class="display-6 fw-bold outfit text-primary-custom mb-3">Industrial Equipment & Process Knowledge</h2>
+            <div class="mx-auto" style="width: 60px; height: 3px; background-color: var(--secondary-blue); border-radius: 2px;"></div>
         </div>
 
         <!-- Blog Grid -->

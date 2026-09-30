@@ -1,8 +1,18 @@
 <?php
-$files = glob(__DIR__ . '/storage/framework/views/*');
-foreach($files as $file) {
-    if(is_file($file)) {
-        unlink($file);
+$dirs = [
+    __DIR__ . '/storage/framework/views/*',
+    __DIR__ . '/bootstrap/cache/*.php'
+];
+
+foreach ($dirs as $dir) {
+    $files = glob($dir);
+    if ($files) {
+        foreach($files as $file) {
+            if(is_file($file)) {
+                @unlink($file);
+            }
+        }
     }
 }
-echo "Cache cleared.";
+echo "All views, config, and route caches successfully cleared.";
+

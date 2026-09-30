@@ -36,7 +36,7 @@
 
 @section('content')
 <!-- Blog Header Banner -->
-<div class="blog-header-banner position-relative text-white py-5" style="background: linear-gradient(135deg, rgba(27, 49, 104, 0.96) 0%, rgba(0, 108, 183, 0.92) 100%), url('{{ asset($blog['banner_image'] ?? $blog['image']) }}') center/cover no-repeat;">
+<div class="blog-header-banner position-relative text-white py-5" style="background: linear-gradient(rgba(0, 26, 51, 0.78), rgba(0, 26, 51, 0.78)), url('{{ asset($blog['banner_image'] ?? $blog['image']) }}') center/cover no-repeat;">
     <div class="container position-relative py-4" style="z-index: 2;">
         <div class="row">
             <div class="col-lg-10 mx-auto text-center">

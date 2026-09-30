@@ -35,12 +35,12 @@ class BlogController extends Controller
         // Canonical URL always points to main primary slug
         $canonicalUrl = url('/blogs/' . $blog['slug']);
 
-        $pageTitle = $blog['meta_title'] . ' | Vishwakarma Engineering';
-        $metaDescription = $blog['meta_description'];
-        $metaKeywords = $blog['meta_keywords'];
-        $ogImage = asset($blog['image']);
+        $pageTitle = ($blog['meta_title'] ?? $blog['title']) . ' | Vishwakarma Engineering';
+        $metaDescription = $blog['meta_description'] ?? '';
+        $metaKeywords = $blog['meta_keywords'] ?? '';
+        $ogImage = isset($blog['image']) ? asset($blog['image']) : asset('assets/images/logo.jpeg');
 
-        $relatedBlogs = BlogService::getRecentBlogs(3, $blog['slug']);
+        $relatedBlogs = BlogService::getRecentBlogs(3, $blog['slug'] ?? null);
 
         // Generate JSON-LD Schema for Google Search Console (BlogPosting / Article)
         $schema = [
@@ -50,17 +50,17 @@ class BlogController extends Controller
                 '@type' => 'WebPage',
                 '@id' => $canonicalUrl
             ],
-            'headline' => $blog['title'],
-            'description' => $blog['meta_description'],
+            'headline' => $blog['title'] ?? '',
+            'description' => $blog['meta_description'] ?? '',
             'image' => [
-                asset($blog['image']),
-                asset($blog['banner_image'])
+                isset($blog['image']) ? asset($blog['image']) : asset('assets/images/logo.jpeg'),
+                asset($blog['banner_image'] ?? $blog['image'] ?? 'assets/images/logo.jpeg')
             ],
-            'datePublished' => $blog['iso_date'] . 'T09:00:00+05:30',
-            'dateModified' => $blog['iso_date'] . 'T12:00:00+05:30',
+            'datePublished' => ($blog['iso_date'] ?? date('Y-m-d')) . 'T09:00:00+05:30',
+            'dateModified' => ($blog['iso_date'] ?? date('Y-m-d')) . 'T12:00:00+05:30',
             'author' => [
                 '@type' => 'Organization',
-                'name' => 'Vishwakarma Engineering Technical Team',
+                'name' => $blog['author'] ?? 'Vishwakarma Engineering Technical Team',
                 'url' => url('/')
             ],
             'publisher' => [
@@ -71,7 +71,7 @@ class BlogController extends Controller
                     'url' => asset('assets/images/logo.jpeg')
                 ]
             ],
-            'articleSection' => $blog['category']
+            'articleSection' => $blog['category'] ?? 'Engineering'
         ];
 
         return view('blogs.show', compact('blog', 'relatedBlogs', 'pageTitle', 'metaDescription', 'metaKeywords', 'canonicalUrl', 'ogImage', 'schema'));

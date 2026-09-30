@@ -54,11 +54,11 @@
                             </a>
                         </h3>
                         <p class="blog-card-desc mb-3 flex-grow-1">
-                            {{ \Illuminate\Support\Str::limit($blogItem['excerpt'], 105) }}
+                            {{ \Illuminate\Support\Str::limit($blogItem['excerpt'], 95) }}
                         </p>
                         <div class="pt-2 border-top d-flex align-items-center justify-content-between mt-auto">
                             <a href="{{ url('/blogs/' . $blogItem['slug']) }}" class="btn-industrial-link fw-bold text-decoration-none small">
-                                Read Full Guide <i class="fas fa-arrow-right ms-1"></i>
+                                Read More <i class="fas fa-arrow-right ms-1"></i>
                             </a>
                         </div>
                     </div>

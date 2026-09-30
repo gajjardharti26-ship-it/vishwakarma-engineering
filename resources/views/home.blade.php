@@ -366,28 +366,30 @@
             <div class="col-lg-4 col-md-6">
                 <div class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border transition-hover d-flex flex-column">
                     <div class="blog-img-wrapper position-relative">
-                        <img src="{{ asset($fBlog['image']) }}" class="img-fluid w-100" alt="{{ $fBlog['title'] }}" style="height: 230px; object-fit: cover;">
+                        <img src="{{ asset($fBlog['image']) }}" class="img-fluid w-100" alt="{{ $fBlog['title'] }}" style="height: 195px; object-fit: cover;">
                         <div class="blog-date">
                             <span class="day">{{ $fBlog['date_day'] }}</span>
                             <span class="month">{{ $fBlog['date_month'] }}</span>
                         </div>
                         <div class="position-absolute" style="top: 12px; right: 12px;">
-                            <span class="badge bg-primary-custom text-white px-3 py-1 rounded-pill small shadow-sm">{{ $fBlog['category_badge'] }}</span>
+                            <span class="badge bg-primary-custom text-white px-2 py-1 rounded-pill small shadow-sm" style="font-size: 0.72rem;">{{ $fBlog['category_badge'] }}</span>
                         </div>
                     </div>
-                    <div class="p-4 d-flex flex-column flex-grow-1">
-                        <div class="d-flex align-items-center justify-content-between mb-2 text-muted small">
+                    <div class="p-3 d-flex flex-column flex-grow-1">
+                        <div class="d-flex align-items-center justify-content-between mb-2 text-muted" style="font-size: 0.78rem;">
                             <span><i class="far fa-clock me-1 text-secondary-blue"></i> {{ $fBlog['read_time'] }}</span>
                             <span><i class="far fa-calendar-check me-1 text-secondary-blue"></i> {{ $fBlog['date_year'] }}</span>
                         </div>
-                        <h4 class="outfit h5 fw-bold mb-3">
+                        <h4 class="outfit fw-bold mb-2" style="font-size: 1.05rem; line-height: 1.35; min-height: 42px;">
                             <a href="{{ url('/blogs/' . $fBlog['slug']) }}" class="text-dark text-decoration-none hover-primary-link">
                                 {{ $fBlog['short_title'] ?? $fBlog['title'] }}
                             </a>
                         </h4>
-                        <p class="text-muted small mb-4 flex-grow-1" style="line-height: 1.6;">{{ $fBlog['excerpt'] }}</p>
-                        <div class="pt-3 border-top d-flex align-items-center justify-content-between mt-auto">
-                            <a href="{{ url('/blogs/' . $fBlog['slug']) }}" class="btn-industrial-link fw-bold text-decoration-none">Read Full Article <i class="fas fa-arrow-right ms-2"></i></a>
+                        <p class="text-muted mb-3 flex-grow-1" style="font-size: 0.84rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                            {{ \Illuminate\Support\Str::limit($fBlog['excerpt'], 95) }}
+                        </p>
+                        <div class="pt-2 border-top d-flex align-items-center justify-content-between mt-auto">
+                            <a href="{{ url('/blogs/' . $fBlog['slug']) }}" class="btn-industrial-link fw-bold text-decoration-none small">Read More <i class="fas fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -574,9 +576,8 @@ olor: var(--logo-blue);
     .btn-industrial-link {
         color: var(--industrial-blue);
         font-weight: 700;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        letter-spacing: 1px;
+        text-transform: none;
+        font-size: 0.9rem;
         text-decoration: none;
         transition: 0.3s;
         border: none;

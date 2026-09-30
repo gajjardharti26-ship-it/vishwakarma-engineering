@@ -358,69 +358,41 @@
             <p class="text-muted mx-auto mt-3" style="max-width: 700px;">Explore expert insights on pressure vessels, chemical reactors, storage tanks, ETP systems, industrial fabrication, welding technology, and process equipment manufacturing.</p>
         </div>
 
+        @php
+            $featuredBlogs = \App\Services\BlogService::getRecentBlogs(3);
+        @endphp
         <div class="row g-4">
-            <!-- Blog Post 1 -->
+            @foreach($featuredBlogs as $fBlog)
             <div class="col-lg-4 col-md-6">
-                <div class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border-0 transition-hover">
-                    <div class="blog-img-wrapper">
-                        <img src="{{ asset('assets/images/blog_1.png') }}" class="img-fluid" alt="Pressure Vessel Fabrication">
+                <div class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border transition-hover d-flex flex-column">
+                    <div class="blog-img-wrapper position-relative">
+                        <img src="{{ asset($fBlog['image']) }}" class="img-fluid w-100" alt="{{ $fBlog['title'] }}" style="height: 230px; object-fit: cover;">
                         <div class="blog-date">
-                            <span class="day">15</span>
-                            <span class="month">MAY</span>
+                            <span class="day">{{ $fBlog['date_day'] }}</span>
+                            <span class="month">{{ $fBlog['date_month'] }}</span>
+                        </div>
+                        <div class="position-absolute" style="top: 12px; right: 12px;">
+                            <span class="badge bg-primary-custom text-white px-3 py-1 rounded-pill small shadow-sm">{{ $fBlog['category_badge'] }}</span>
                         </div>
                     </div>
-                    <div class="p-4">
-                        <div class="mb-2">
-                            <span class="badge bg-light-industrial text-secondary-blue px-3 py-2 rounded-pill small">Engineering</span>
+                    <div class="p-4 d-flex flex-column flex-grow-1">
+                        <div class="d-flex align-items-center justify-content-between mb-2 text-muted small">
+                            <span><i class="far fa-clock me-1 text-secondary-blue"></i> {{ $fBlog['read_time'] }}</span>
+                            <span><i class="far fa-calendar-check me-1 text-secondary-blue"></i> {{ $fBlog['date_year'] }}</span>
                         </div>
-                        <h4 class="outfit h5 fw-bold mb-3">Pressure Vessel Design & Fabrication Best Practices</h4>
-                        <p class="text-muted small mb-4">Learn how precision engineering, advanced welding, and rigorous quality testing ensure safe and reliable pressure vessels for industrial applications.</p>
-                        <a href="{{ url('/blogs/precision-of-pressure-vessel-fabrication') }}" class="btn-industrial-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        <h4 class="outfit h5 fw-bold mb-3">
+                            <a href="{{ url('/blogs/' . $fBlog['slug']) }}" class="text-dark text-decoration-none hover-primary-link">
+                                {{ $fBlog['short_title'] ?? $fBlog['title'] }}
+                            </a>
+                        </h4>
+                        <p class="text-muted small mb-4 flex-grow-1" style="line-height: 1.6;">{{ $fBlog['excerpt'] }}</p>
+                        <div class="pt-3 border-top d-flex align-items-center justify-content-between mt-auto">
+                            <a href="{{ url('/blogs/' . $fBlog['slug']) }}" class="btn-industrial-link fw-bold text-decoration-none">Read Full Article <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Blog Post 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border-0 transition-hover">
-                    <div class="blog-img-wrapper">
-                        <img src="{{ asset('assets/images/blog_2.jpg') }}" class="img-fluid" alt="Chemical Reactor Optimization">
-                        <div class="blog-date">
-                            <span class="day">10</span>
-                            <span class="month">MAY</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="mb-2">
-                            <span class="badge bg-light-industrial text-secondary-blue px-3 py-2 rounded-pill small">Manufacturing</span>
-                        </div>
-                        <h4 class="outfit h5 fw-bold mb-3">Optimizing Chemical Reactor Performance</h4>
-                        <p class="text-muted small mb-4">Discover how reactor design, mixing efficiency, and precision fabrication improve productivity, safety, and process reliability in industrial operations.</p>
-                        <a href="{{ url('/blogs/optimizing-chemical-reactor-performance') }}" class="btn-industrial-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blog Post 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border-0 transition-hover">
-                    <div class="blog-img-wrapper">
-                        <img src="{{ asset('assets/images/blog_3.jpg') }}" class="img-fluid" alt="Industrial Fabrication Quality">
-                        <div class="blog-date">
-                            <span class="day">05</span>
-                            <span class="month">MAY</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="mb-2">
-                            <span class="badge bg-light-industrial text-secondary-blue px-3 py-2 rounded-pill small">Engineering Standards</span>
-                        </div>
-                        <h4 class="outfit h5 fw-bold mb-3">Industrial Fabrication & Quality Standards</h4>
-                        <p class="text-muted small mb-4">Learn how precision fabrication, advanced welding, and quality inspections ensure reliable industrial equipment performance.</p>
-                        <a href="{{ url('/blogs/industrial-fabrication-quality-standards') }}" class="btn-industrial-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
         
         <div class="text-center mt-5">

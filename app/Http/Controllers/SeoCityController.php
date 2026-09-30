@@ -200,15 +200,27 @@ class SeoCityController extends Controller
             }
         }
 
+        // Dynamic Blog Posts
+        $blogs = \App\Services\BlogService::getAllBlogs();
+        $blogUrls = [];
+        foreach ($blogs as $bSlug => $b) {
+            $blogUrls[] = [
+                'loc' => $baseUrl . '/blogs/' . $b['slug'],
+                'priority' => '0.8',
+                'changefreq' => 'weekly',
+                'lastmod' => $b['iso_date'] ?? $lastmod
+            ];
+        }
+
         $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
         $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 
-        $allUrls = array_merge($staticUrls, $categoryUrls, $productUrls, $cityHubUrls, $productCityUrls);
+        $allUrls = array_merge($staticUrls, $blogUrls, $categoryUrls, $productUrls, $cityHubUrls, $productCityUrls);
 
         foreach ($allUrls as $entry) {
             $xml .= "  <url>\n";
             $xml .= "    <loc>" . htmlspecialchars($entry['loc']) . "</loc>\n";
-            $xml .= "    <lastmod>" . $lastmod . "</lastmod>\n";
+            $xml .= "    <lastmod>" . ($entry['lastmod'] ?? $lastmod) . "</lastmod>\n";
             $xml .= "    <changefreq>" . $entry['changefreq'] . "</changefreq>\n";
             $xml .= "    <priority>" . $entry['priority'] . "</priority>\n";
             $xml .= "  </url>\n";

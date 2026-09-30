@@ -1,234 +1,165 @@
 @extends('layouts.app')
 
-@section('title', 'Industrial Insights & Engineering Blogs - Vishwakarma Engineering')
-@section('meta_description', 'Read the latest blogs and insights on industrial pressure vessels, chemical reactors, and storage tanks by Vishwakarma Engineering in Ahmedabad.')
-@section('meta_keywords', 'pressure vessel manufacturer in Ahmedabad, pressure vessels in Ahmedabad, storage tank manufacturer in Ahmedabad, industrial storage tanks in Ahmedabad, chemical reactor manufacturer in Ahmedabad, process equipment manufacturer in Ahmedabad, stainless steel tanks in Ahmedabad, industrial reactors in Ahmedabad, reactor vessel manufacturer in Ahmedabad, industrial pressure vessels in Ahmedabad')
+@section('title', $pageTitle ?? 'Industrial Insights & Engineering Blogs - Vishwakarma Engineering')
+@section('meta_description', $metaDescription ?? 'Explore technical blogs and engineering guides on industrial pressure vessels, chemical reactors, storage tanks, and ETP plants.')
+@section('meta_keywords', $metaKeywords ?? 'pressure vessel manufacturer, pressure vessel manufacturing process, jacketed vessel fabrication, chemical storage equipment exporters, chemical storage tanks, limpet coil vessel, ETP tank, Ahmedabad')
+@section('canonical', $canonicalUrl ?? url('/blogs'))
+
 @section('content')
 <!-- Page Header -->
-<div class="page-header" style="background: url('{{ asset('assets/images/vessal.jpg') }}');">
-    <div class="container text-center">
-        <h1 class="display-3 fw-bold outfit text-white mb-3">Our Blogs</h1>
+<div class="page-header position-relative text-white py-5" style="background: linear-gradient(135deg, rgba(27, 49, 104, 0.95) 0%, rgba(0, 108, 183, 0.90) 100%), url('{{ asset('assets/images/vessal.jpg') }}') center/cover no-repeat; min-height: 280px; display: flex; align-items: center;">
+    <div class="container text-center position-relative" style="z-index: 2;">
+        <span class="badge bg-white text-primary-custom px-3 py-2 rounded-pill fw-bold text-uppercase mb-3 shadow-sm" style="letter-spacing: 1.5px; font-size: 0.8rem;">Knowledge & Technical Hub</span>
+        <h1 class="display-4 fw-bold outfit text-white mb-3">Engineering Insights & Technical Articles</h1>
+        <p class="lead text-white text-opacity-90 mx-auto mb-4" style="max-width: 720px;">Deep-dive technical guides on industrial pressure vessels, chemical reactors, storage equipment, and heavy fabrication standards.</p>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb justify-content-center text-capitalize small fw-bold m-0">
-                <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-white text-opacity-75 text-decoration-none">Home</a></li>
-                <li class="breadcrumb-item active text-white" aria-current="page">Insights</li>
+            <ol class="breadcrumb justify-content-center text-capitalize small fw-bold m-0 bg-transparent p-0">
+                <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-white text-opacity-75 text-decoration-none"><i class="fas fa-home me-1"></i> Home</a></li>
+                <li class="breadcrumb-item active text-white" aria-current="page">Blogs & Insights</li>
             </ol>
         </nav>
     </div>
 </div>
 
 <section class="bg-light-industrial py-5">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <h6 class="text-secondary-blue fw-bold text-uppercase small mb-2" style="letter-spacing: 2px;">Technical Knowledge Hub</h6>
-            <h2 class="display-6 fw-bold outfit text-primary-custom mb-3">Engineering Insights & Industrial Updates</h2>
-            <p class="text-muted mx-auto" style="max-width: 700px;">Stay informed with the latest trends, safety protocols, and technical advancements in the world of heavy industrial fabrication and chemical processing.</p>
+    <div class="container py-3">
+        <!-- Section Subtitle & Quick Stats Bar -->
+        <div class="row align-items-center justify-content-between mb-5">
+            <div class="col-lg-7">
+                <h6 class="text-secondary-blue fw-bold text-uppercase small mb-1" style="letter-spacing: 2px;">Latest Published Articles</h6>
+                <h2 class="display-6 fw-bold outfit text-primary-custom mb-0">Industrial Fabrication & Process Engineering Knowledge</h2>
+            </div>
+            <div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
+                <span class="text-muted small"><i class="fas fa-book-open me-2 text-secondary-blue"></i> Showing {{ count($blogs) }} In-Depth Technical Guides</span>
+            </div>
         </div>
 
+        <!-- Blog Grid -->
         <div class="row g-4">
-            <!-- Blog Card 1 -->
+            @foreach($blogs as $slugKey => $blogItem)
             <div class="col-lg-4 col-md-6">
-                <div class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border-0">
-                    <div class="blog-img-wrapper">
-                        <img src="{{ asset('assets/images/blog_1.png') }}" class="img-fluid" alt="Pressure Vessel Fabrication">
-                        <div class="blog-date">
-                            <span class="day">15</span>
-                            <span class="month">MAY</span>
+                <article class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border d-flex flex-column">
+                    <div class="blog-img-wrapper position-relative">
+                        <img src="{{ asset($blogItem['image']) }}" class="img-fluid w-100" alt="{{ $blogItem['title'] }}" loading="lazy" style="height: 230px; object-fit: cover;">
+                        <div class="blog-date-tag">
+                            <span class="day">{{ $blogItem['date_day'] }}</span>
+                            <span class="month">{{ $blogItem['date_month'] }}</span>
+                        </div>
+                        <div class="blog-category-badge">
+                            <span class="badge bg-primary-custom text-white px-3 py-1 rounded-pill small shadow-sm">{{ $blogItem['category_badge'] }}</span>
                         </div>
                     </div>
-                    <div class="p-4">
-                        <div class="mb-2">
-                            <span class="badge bg-light-industrial text-secondary-blue px-3 py-2 rounded-pill small">Engineering</span>
+                    <div class="p-4 d-flex flex-column flex-grow-1">
+                        <div class="d-flex align-items-center justify-content-between mb-2 text-muted small">
+                            <span><i class="far fa-clock me-1 text-secondary-blue"></i> {{ $blogItem['read_time'] }}</span>
+                            <span><i class="far fa-calendar-check me-1 text-secondary-blue"></i> {{ $blogItem['date_year'] }}</span>
                         </div>
-                        <h4 class="outfit h5 fw-bold mb-3">The Precision of Pressure Vessel Fabrication</h4>
-                        <p class="text-muted small mb-4">Exploring the critical role of advanced SAW welding and NDT testing in ensuring the safety and longevity of industrial pressure vessels...</p>
-                        <a href="{{ url('/blogs/precision-of-pressure-vessel-fabrication') }}" class="btn-industrial-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        <h3 class="outfit h5 fw-bold mb-3">
+                            <a href="{{ url('/blogs/' . $blogItem['slug']) }}" class="text-dark text-decoration-none hover-primary-link">
+                                {{ $blogItem['short_title'] ?? $blogItem['title'] }}
+                            </a>
+                        </h3>
+                        <p class="text-muted small mb-4 flex-grow-1" style="line-height: 1.6;">
+                            {{ $blogItem['excerpt'] }}
+                        </p>
+                        <div class="pt-3 border-top d-flex align-items-center justify-content-between mt-auto">
+                            <a href="{{ url('/blogs/' . $blogItem['slug']) }}" class="btn-industrial-link fw-bold text-decoration-none">
+                                Read Full Guide <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </article>
             </div>
+            @endforeach
+        </div>
 
-            <!-- Blog Card 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border-0">
-                    <div class="blog-img-wrapper">
-                        <img src="{{ asset('assets/images/blog_2.jpg') }}" class="img-fluid" alt="Chemical Reactor Optimization">
-                        <div class="blog-date">
-                            <span class="day">10</span>
-                            <span class="month">MAY</span>
-                        </div>
+        <!-- Interactive Consultation Banner -->
+        <div class="mt-5 pt-4">
+            <div class="p-4 p-md-5 rounded-4 shadow-sm text-white position-relative overflow-hidden" style="background: linear-gradient(135deg, #1b3168 0%, #006cb7 100%);">
+                <div class="row align-items-center position-relative" style="z-index: 2;">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <span class="badge bg-white text-primary-custom px-3 py-2 rounded-pill fw-bold small mb-3">Custom Fabrication Consultation</span>
+                        <h3 class="outfit fw-bold mb-2">Have a Technical Requirement for Pressure Vessels or Chemical Reactors?</h3>
+                        <p class="mb-0 text-white text-opacity-90 small">Our engineering team designs and manufactures tailor-made ASME & IS compliant process equipment to your exact datasheets.</p>
                     </div>
-                    <div class="p-4">
-                        <div class="mb-2">
-                            <span class="badge bg-light-industrial text-secondary-blue px-3 py-2 rounded-pill small">Manufacturing</span>
-                        </div>
-                        <h4 class="outfit h5 fw-bold mb-3">Optimizing Chemical Reactor Performance</h4>
-                        <p class="text-muted small mb-4">Discover how reactor design, mixing efficiency, and precision fabrication improve productivity, safety, and process reliability in industrial operations.</p>
-                        <a href="{{ url('/blogs/optimizing-chemical-reactor-performance') }}" class="btn-industrial-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blog Card 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border-0">
-                    <div class="blog-img-wrapper">
-                        <img src="{{ asset('assets/images/blog_3.jpg') }}" class="img-fluid" alt="Industrial Fabrication Quality">
-                        <div class="blog-date">
-                            <span class="day">05</span>
-                            <span class="month">MAY</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="mb-2">
-                            <span class="badge bg-light-industrial text-secondary-blue px-3 py-2 rounded-pill small">Engineering Standards</span>
-                        </div>
-                        <h4 class="outfit h5 fw-bold mb-3">Industrial Fabrication & Quality Standards</h4>
-                        <p class="text-muted small mb-4">Learn how precision fabrication, advanced welding, and quality inspections ensure reliable industrial equipment performance.</p>
-                        <a href="{{ url('/blogs/industrial-fabrication-quality-standards') }}" class="btn-industrial-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blog Card 4 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border-0">
-                    <div class="blog-img-wrapper">
-                        <img src="{{ asset('assets/images/vessal.jpg') }}" class="img-fluid" alt="Storage Tank Safety">
-                        <div class="blog-date">
-                            <span class="day">28</span>
-                            <span class="month">APR</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="mb-2">
-                            <span class="badge bg-light-industrial text-secondary-blue px-3 py-2 rounded-pill small">Safety</span>
-                        </div>
-                        <h4 class="outfit h5 fw-bold mb-3">Modern Storage Tank Safety: Standards & Inspections</h4>
-                        <p class="text-muted small mb-4">Understanding the importance of regular inspections and adherence to API standards for industrial chemical storage tanks...</p>
-                        <a href="{{ url('/blogs/modern-storage-tank-safety') }}" class="btn-industrial-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blog Card 5 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border-0">
-                    <div class="blog-img-wrapper">
-                        <img src="{{ asset('assets/images/unsplash-photo-1513828583688-c52646db42da.jpg') }}" class="img-fluid" alt="Ketchi Columns">
-                        <div class="blog-date">
-                            <span class="day">20</span>
-                            <span class="month">APR</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="mb-2">
-                            <span class="badge bg-light-industrial text-secondary-blue px-3 py-2 rounded-pill small">Chemical</span>
-                        </div>
-                        <h4 class="outfit h5 fw-bold mb-3">The Role of Ketchi Columns in Chemical Processing</h4>
-                        <p class="text-muted small mb-4">Exploring the engineering behind efficient separation processes and how custom column designs impact overall production output...</p>
-                        <a href="{{ url('/blogs/distillation-columns-chemical-processing') }}" class="btn-industrial-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blog Card 6 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-card-premium h-100 bg-white rounded-4 overflow-hidden shadow-sm border-0">
-                    <div class="blog-img-wrapper">
-                        <img src="{{ asset('assets/images/unsplash-photo-1504328345606-18bbc8c9d7d1.jpg') }}" class="img-fluid" alt="Advanced Welding">
-                        <div class="blog-date">
-                            <span class="day">12</span>
-                            <span class="month">APR</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <div class="mb-2">
-                            <span class="badge bg-light-industrial text-secondary-blue px-3 py-2 rounded-pill small">Technique</span>
-                        </div>
-                        <h4 class="outfit h5 fw-bold mb-3">Advanced Welding Techniques for Heavy Fabrication</h4>
-                        <p class="text-muted small mb-4">A deep dive into TIG, MIG, and SAW welding processes and their applications in manufacturing high-pressure industrial equipment...</p>
-                        <a href="{{ url('/blogs/advanced-welding-techniques') }}" class="btn-industrial-link px-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="{{ url('/contact') }}" class="btn btn-light btn-lg px-4 py-3 rounded-pill fw-bold text-primary-custom shadow-sm me-2">Request a Quote</a>
+                        <a href="{{ url('/products') }}" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill fw-bold">View Products</a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Pagination removed as there is currently only one page -->
     </div>
 </section>
 @endsection
 
 @push('styles')
 <style>
+    .bg-light-industrial {
+        background-color: #f8fafc;
+    }
     .blog-card-premium {
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        border: 1px solid #f1f5f9 !important;
+        transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+        border: 1px solid #e2e8f0 !important;
     }
     .blog-card-premium:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(27, 49, 104, 0.12) !important;
+        border-color: #cbd5e1 !important;
     }
     .blog-img-wrapper {
-        height: 240px;
+        height: 230px;
         overflow: hidden;
-        position: relative;
     }
     .blog-img-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
         transition: transform 0.6s ease;
     }
     .blog-card-premium:hover .blog-img-wrapper img {
-        transform: scale(1.1);
+        transform: scale(1.08);
     }
-    .blog-date {
+    .blog-date-tag {
         position: absolute;
-        bottom: 15px;
-        left: 15px;
-        background: var(--secondary-blue);
-        color: #fff;
-        padding: 8px 12px;
+        bottom: 12px;
+        left: 12px;
+        background: #006cb7;
+        color: #ffffff;
+        padding: 6px 12px;
         border-radius: 8px;
         text-align: center;
-        line-height: 1.2;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        line-height: 1.15;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
-    .blog-date .day { display: block; font-weight: 800; font-size: 1.2rem; }
-    .blog-date .month { display: block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-
-    .btn-industrial-link {
-        color: var(--secondary-blue);
+    .blog-date-tag .day {
+        display: block;
+        font-weight: 800;
+        font-size: 1.15rem;
+    }
+    .blog-date-tag .month {
+        display: block;
+        font-size: 0.65rem;
         font-weight: 700;
         text-transform: uppercase;
-        font-size: 0.85rem;
         letter-spacing: 1px;
-        text-decoration: none;
-        transition: 0.3s;
     }
-    .btn-industrial-link:hover { color: var(--primary-blue); }
-    .btn-industrial-link i { transition: transform 0.3s; }
-    .btn-industrial-link:hover i { transform: translateX(5px); }
-
-    .pagination .page-link {
-        width: 45px;
-        height: 45px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #e2e8f0;
-        color: var(--primary-blue);
-        font-weight: 600;
-        transition: all 0.3s;
+    .blog-category-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
     }
-    .pagination .page-item.active .page-link {
-        background-color: var(--secondary-blue);
-        border-color: var(--secondary-blue);
-        color: #fff;
+    .hover-primary-link {
+        color: #1e293b;
+        transition: color 0.2s ease;
     }
-    .pagination .page-link:hover {
-        background-color: var(--light-grey);
-        color: var(--secondary-blue);
+    .hover-primary-link:hover {
+        color: #006cb7;
+    }
+    .btn-industrial-link {
+        color: #006cb7;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+    }
+    .btn-industrial-link:hover {
+        color: #1b3168;
     }
 </style>
 @endpush

@@ -1,266 +1,266 @@
 @extends('layouts.app')
 
-@section('title', $title . ' - Vishwakarma Engineering Blogs')
-@section('meta_description', 'Read about ' . $title . ' and other industrial insights from Vishwakarma Engineering, a leading manufacturer in Ahmedabad.')
-@section('meta_keywords', 'pressure vessel manufacturer in Ahmedabad, pressure vessels in Ahmedabad, storage tank manufacturer in Ahmedabad, industrial storage tanks in Ahmedabad, chemical reactor manufacturer in Ahmedabad, process equipment manufacturer in Ahmedabad, stainless steel tanks in Ahmedabad, industrial reactors in Ahmedabad, reactor vessel manufacturer in Ahmedabad, industrial pressure vessels in Ahmedabad')
-@section('content')
-@php
-if ($slug == 'optimizing-chemical-reactor-performance') {
-    $blogTitle = 'Optimizing Chemical Reactor Performance';
-    $blogCategory = 'Manufacturing';
-    $blogDate = '10 May 2024';
-    $blogImage = asset('assets/images/blog_2.jpg');
-} elseif ($slug == 'industrial-fabrication-quality-standards') {
-    $blogTitle = 'Industrial Fabrication & Quality Standards';
-    $blogCategory = 'Engineering Standards';
-    $blogDate = '05 May 2024';
-    $blogImage = asset('assets/images/blog_3.jpg');
-} else {
-    $blogTitle = 'Pressure Vessel Design & Fabrication Best Practices';
-    $blogCategory = 'Engineering';
-    $blogDate = '15 May 2024';
-    $blogImage = asset('assets/images/blog_1.png');
-}
-@endphp
+@section('title', $pageTitle ?? ($blog['title'] . ' - Vishwakarma Engineering Blogs'))
+@section('meta_description', $metaDescription ?? $blog['meta_description'])
+@section('meta_keywords', $metaKeywords ?? $blog['meta_keywords'])
+@section('canonical', $canonicalUrl ?? url('/blogs/' . $blog['slug']))
+@section('og_image', $ogImage ?? asset($blog['image']))
 
-<!-- Blog Header -->
-<div class="page-header" style="background: url('{{ $blogImage }}');">
-    <div class="container text-center">
-        <h1 class="display-4 fw-bold outfit text-white mb-3">{{ $blogTitle }}</h1>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb justify-content-center text-capitalize small fw-bold m-0">
-                <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-white text-opacity-75 text-decoration-none">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('/blogs') }}" class="text-white text-opacity-75 text-decoration-none">Blogs</a></li>
-                <li class="breadcrumb-item active text-white" aria-current="page">Blog Detail</li>
-            </ol>
-        </nav>
+@section('schema')
+@if(!empty($schema))
+<script type="application/ld+json">
+{!! json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+</script>
+@endif
+@if(!empty($blog['faqs']))
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    @foreach($blog['faqs'] as $index => $faq)
+    {
+      "@type": "Question",
+      "name": "{{ addslashes($faq['question']) }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ addslashes($faq['answer']) }}"
+      }
+    }{{ $index < count($blog['faqs']) - 1 ? ',' : '' }}
+    @endforeach
+  ]
+}
+</script>
+@endif
+@endsection
+
+@section('content')
+<!-- Blog Header Banner -->
+<div class="blog-header-banner position-relative text-white py-5" style="background: linear-gradient(135deg, rgba(27, 49, 104, 0.96) 0%, rgba(0, 108, 183, 0.92) 100%), url('{{ asset($blog['banner_image'] ?? $blog['image']) }}') center/cover no-repeat;">
+    <div class="container position-relative py-4" style="z-index: 2;">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <div class="d-inline-flex align-items-center gap-2 mb-3">
+                    <span class="badge bg-white text-primary-custom px-3 py-2 rounded-pill fw-bold text-uppercase small shadow-sm">{{ $blog['category'] }}</span>
+                    <span class="badge bg-secondary-custom text-white px-3 py-2 rounded-pill small"><i class="far fa-clock me-1"></i> {{ $blog['read_time'] }}</span>
+                </div>
+                <h1 class="display-5 fw-bold outfit text-white mb-3">{{ $blog['title'] }}</h1>
+                
+                <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 text-white text-opacity-90 small mb-3">
+                    <span><i class="far fa-calendar-alt text-warning me-1"></i> Published: {{ $blog['date_formatted'] }}</span>
+                    <span><i class="fas fa-user-shield text-warning me-1"></i> By {{ $blog['author'] }}</span>
+                    <span><i class="fas fa-map-marker-alt text-warning me-1"></i> Ahmedabad, Gujarat</span>
+                </div>
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center text-capitalize small fw-bold m-0 bg-transparent p-0">
+                        <li class="breadcrumb-item"><a href="{{ url('/') }}" class="text-white text-opacity-75 text-decoration-none">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url('/blogs') }}" class="text-white text-opacity-75 text-decoration-none">Blogs</a></li>
+                        <li class="breadcrumb-item active text-white" aria-current="page">{{ $blog['short_title'] ?? 'Technical Guide' }}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
     </div>
 </div>
 
 <section class="bg-white py-5">
-    <div class="container py-4">
+    <div class="container py-3">
         <div class="row g-5">
-            <!-- Main Content -->
+            <!-- Main Blog Article Body -->
             <div class="col-lg-8">
-                <div class="blog-content">
-                    <img src="{{ $blogImage }}" class="img-fluid rounded-4 shadow-sm mb-5" alt="{{ $blogTitle }}">
-                    
-                    <div class="d-flex align-items-center mb-4 text-muted small">
-                        <span class="me-4"><i class="far fa-calendar-alt me-2 text-secondary-blue"></i> {{ $blogDate }}</span>
-                        <span><i class="far fa-folder me-2 text-secondary-blue"></i> {{ $blogCategory }}</span>
+                <article class="blog-article-content">
+                    <!-- Featured Image -->
+                    <div class="featured-img-container mb-4 rounded-4 overflow-hidden shadow-sm border">
+                        <img src="{{ asset($blog['image']) }}" class="img-fluid w-100" alt="{{ $blog['title'] }}" style="max-height: 440px; object-fit: cover;">
                     </div>
 
-                    @if($slug == 'optimizing-chemical-reactor-performance')
-                    <h2 class="outfit fw-bold mb-4">Introduction</h2>
-                    <p class="mb-4">Chemical reactors are the heart of many industrial processes, enabling controlled chemical reactions for the production of pigments, agrochemicals, petrochemicals, and specialty chemicals. Efficient reactor design directly impacts product quality, process efficiency, and operational safety.</p>
-                    
-                    <p class="mb-4">At Vishwakarma Engineering, we design and manufacture high-performance chemical reactors engineered for demanding industrial applications.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Importance of Reactor Design</h3>
-                    <p class="mb-4">A properly designed reactor helps industries achieve:</p>
-                    <ul class="mb-4 list-styled">
-                        <li class="mb-2">Consistent product quality</li>
-                        <li class="mb-2">Improved process efficiency</li>
-                        <li class="mb-2">Better heat transfer</li>
-                        <li class="mb-2">Reduced production downtime</li>
-                        <li class="mb-2">Enhanced operational safety</li>
-                    </ul>
-                    <p class="mb-5">The right reactor configuration ensures smooth and reliable plant operations.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Key Design Considerations</h3>
-                    
-                    <h4 class="outfit fw-bold mb-2">Material Selection</h4>
-                    <p class="mb-4">Reactors are fabricated using high-quality MS and SS materials selected according to process conditions, operating temperature, and chemical compatibility.</p>
-
-                    <h4 class="outfit fw-bold mb-2">Agitation Systems</h4>
-                    <p class="mb-4">Efficient agitators and mixing systems ensure uniform blending and optimal reaction performance.</p>
-
-                    <h4 class="outfit fw-bold mb-2">Heat Transfer Efficiency</h4>
-                    <p class="mb-5">Advanced jacket and coil arrangements help maintain precise process temperatures throughout the reaction cycle.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Manufacturing Excellence</h3>
-                    <p class="mb-4">Our reactors are manufactured using:</p>
-                    <ul class="mb-4 list-styled">
-                        <li class="mb-2">Precision plate rolling</li>
-                        <li class="mb-2">Advanced welding processes</li>
-                        <li class="mb-2">Dimensional accuracy checks</li>
-                        <li class="mb-2">Quality-controlled fabrication methods</li>
-                    </ul>
-                    <p class="mb-5">Every reactor is built to meet stringent industrial requirements.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Quality Testing</h3>
-                    <p class="mb-4">Before dispatch, reactors undergo:</p>
-                    <ul class="mb-4 list-styled">
-                        <li class="mb-2">Hydrostatic Testing</li>
-                        <li class="mb-2">Weld Inspection</li>
-                        <li class="mb-2">Dimensional Verification</li>
-                        <li class="mb-2">Non-Destructive Testing (NDT)</li>
-                    </ul>
-                    <p class="mb-5">These inspections ensure safe and reliable long-term operation.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Applications</h3>
-                    <p class="mb-4">Our chemical reactors are widely used in:</p>
-                    <ul class="mb-5 list-styled">
-                        <li class="mb-2">Pigments Manufacturing</li>
-                        <li class="mb-2">Agro-Chemical Plants</li>
-                        <li class="mb-2">Petrochemical Industries</li>
-                        <li class="mb-2">Specialty Chemical Processing</li>
-                        <li class="mb-2">Industrial Mixing Applications</li>
-                    </ul>
-
-                    <h3 class="outfit fw-bold mb-3">Conclusion</h3>
-                    <p class="mb-4">A well-engineered chemical reactor improves production efficiency, product consistency, and operational safety. Through precision fabrication and strict quality control, Vishwakarma Engineering delivers reactor solutions built for long-term industrial performance.</p>
-                    @elseif($slug == 'industrial-fabrication-quality-standards')
-                    <h2 class="outfit fw-bold mb-4">Introduction</h2>
-                    <p class="mb-4">In industrial equipment manufacturing, quality fabrication is essential for ensuring safety, reliability, and long-term performance. Every stage—from material selection and cutting to welding, assembly, and final inspection—plays a critical role in delivering dependable equipment.</p>
-                    
-                    <p class="mb-4">At Vishwakarma Engineering, we follow stringent fabrication standards and advanced manufacturing practices to produce pressure vessels, chemical reactors, storage tanks, and process equipment for demanding industrial applications.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Importance of Quality Fabrication</h3>
-                    <p class="mb-4">Industrial equipment operates under challenging conditions involving pressure, temperature, and continuous operation. Precision fabrication helps maintain structural integrity, operational efficiency, and equipment longevity.</p>
-                    <p class="mb-5">By following proven engineering methods and strict quality control procedures, manufacturers can minimize downtime and improve overall plant performance.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Key Fabrication Practices</h3>
-                    
-                    <h4 class="outfit fw-bold mb-2">Material Selection</h4>
-                    <p class="mb-4">Selecting the right material grade is the first step in ensuring equipment durability. High-quality MS and SS materials are chosen based on process requirements and operating conditions.</p>
-
-                    <h4 class="outfit fw-bold mb-2">Precision Welding</h4>
-                    <p class="mb-4">Advanced welding techniques such as SAW, TIG, and MIG welding provide strong, consistent joints that enhance equipment strength and reliability.</p>
-
-                    <h4 class="outfit fw-bold mb-2">Dimensional Accuracy</h4>
-                    <p class="mb-4">Accurate cutting, rolling, and fabrication processes ensure every component meets engineering specifications and fits perfectly during assembly.</p>
-
-                    <h4 class="outfit fw-bold mb-2">Quality Inspection</h4>
-                    <p class="mb-5">Comprehensive inspections, including visual checks, dimensional verification, and Non-Destructive Testing (NDT), help identify defects before dispatch.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Quality Assurance Process</h3>
-                    <p class="mb-4">Every manufactured equipment undergoes rigorous quality checks throughout the production cycle. Hydro testing, radiographic inspection, and material verification procedures ensure compliance with industry standards and customer requirements.</p>
-                    <p class="mb-5">This commitment to quality helps deliver equipment that performs reliably even in demanding industrial environments.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Industries Served</h3>
-                    <p class="mb-4">Our fabrication solutions support a wide range of industries including:</p>
-                    <ul class="mb-5 list-styled">
-                        <li class="mb-2">Chemical Industry</li>
-                        <li class="mb-2">Petrochemical Industry</li>
-                        <li class="mb-2">Pigments Industry</li>
-                        <li class="mb-2">Agro-Chemical Industry</li>
-                        <li class="mb-2">Bulk Drug Manufacturing</li>
-                        <li class="mb-2">Process Industries</li>
-                    </ul>
-
-                    <h3 class="outfit fw-bold mb-3">Conclusion</h3>
-                    <p class="mb-4">Quality fabrication is the foundation of dependable industrial equipment. Through advanced manufacturing capabilities, skilled workmanship, and strict quality control, Vishwakarma Engineering delivers equipment that exceeds industry standards.</p>
-                    @else
-                    <h2 class="outfit fw-bold mb-4">Introduction</h2>
-                    <p class="mb-4">Pressure vessels play a vital role in chemical, petrochemical, pigments, agrochemical, and process industries. Designed to safely store liquids, gases, and chemicals under pressure, these vessels require precision engineering and strict quality control to ensure reliable long-term performance.</p>
-                    
-                    <p class="mb-4">At Vishwakarma Engineering, we manufacture custom-engineered pressure vessels designed to meet demanding industrial requirements while maintaining the highest standards of safety and durability.</p>
-
-                    <h3 class="outfit fw-bold mb-3">What Are Pressure Vessels?</h3>
-                    <p class="mb-4">Pressure vessels are specialized containers used to store or process fluids under pressure. They are commonly used in:</p>
-                    <ul class="mb-4 list-styled">
-                        <li class="mb-2">Chemical Plants</li>
-                        <li class="mb-2">Petrochemical Industries</li>
-                        <li class="mb-2">Pigments Manufacturing</li>
-                        <li class="mb-2">Agro-Chemical Processing</li>
-                        <li class="mb-2">Industrial Process Facilities</li>
-                    </ul>
-                    <p class="mb-5">Proper vessel design is critical to maintaining safe and efficient plant operations.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Importance of Material Selection</h3>
-                    <p class="mb-4">The performance of a pressure vessel depends heavily on selecting the right material. We manufacture vessels using:</p>
-                    <ul class="mb-4 list-styled">
-                        <li class="mb-2">Mild Steel (MS)</li>
-                        <li class="mb-2">Stainless Steel 304</li>
-                        <li class="mb-2">Stainless Steel 316</li>
-                        <li class="mb-2">Custom Industrial Grades</li>
-                    </ul>
-                    <p class="mb-5">Material selection is based on operating pressure, temperature, corrosion resistance, and process requirements.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Precision Manufacturing Process</h3>
-                    <p class="mb-4">Every pressure vessel undergoes a carefully controlled manufacturing process.</p>
-                    <ul class="mb-5 list-styled">
-                        <li class="mb-2"><strong>Plate Rolling & Forming:</strong> Steel plates are rolled and shaped according to engineering specifications.</li>
-                        <li class="mb-2"><strong>Fabrication & Assembly:</strong> Components such as shells, nozzles, flanges, and supports are assembled with precision.</li>
-                        <li class="mb-2"><strong>Advanced Welding:</strong> High-strength welding processes ensure structural integrity and long service life.</li>
-                    </ul>
-
-                    <h3 class="outfit fw-bold mb-3">Quality Assurance & Testing</h3>
-                    <p class="mb-4">Before dispatch, every vessel undergoes extensive quality inspections including:</p>
-                    <ul class="mb-5 list-styled">
-                        <li class="mb-2">Dimensional Inspection</li>
-                        <li class="mb-2">Hydrostatic Testing</li>
-                        <li class="mb-2">Weld Inspection</li>
-                        <li class="mb-2">Non-Destructive Testing (NDT)</li>
-                    </ul>
-                    <p class="mb-5">These procedures ensure maximum safety and performance.</p>
-
-                    <h3 class="outfit fw-bold mb-3">Applications</h3>
-                    <p class="mb-4">Pressure vessels manufactured by Vishwakarma Engineering are widely used in:</p>
-                    <ul class="mb-5 list-styled">
-                        <li class="mb-2">Chemical Processing</li>
-                        <li class="mb-2">Petrochemical Plants</li>
-                        <li class="mb-2">Pigments Industries</li>
-                        <li class="mb-2">Agro-Chemical Facilities</li>
-                        <li class="mb-2">Storage & Mixing Systems</li>
-                    </ul>
-
-                    <h3 class="outfit fw-bold mb-3">Why Vishwakarma Engineering?</h3>
-                    <ul class="mb-5 list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Custom Engineered Solutions</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Precision Manufacturing</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Advanced Welding Technology</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Stringent Quality Control</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Timely Project Delivery</li>
-                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Technical Support</li>
-                    </ul>
-
-                    <h3 class="outfit fw-bold mb-3">Conclusion</h3>
-                    <p class="mb-4">A well-designed pressure vessel is essential for safe and efficient industrial operations. Through advanced manufacturing practices, rigorous testing, and engineering expertise, Vishwakarma Engineering delivers reliable pressure vessels built for long-term industrial performance.</p>
+                    <!-- Key Takeaways Box -->
+                    @if(!empty($blog['key_takeaways']))
+                    <div class="key-takeaways-card p-4 rounded-4 mb-5 border-start border-4 border-primary-blue bg-light">
+                        <h4 class="outfit fw-bold text-primary-custom mb-3 d-flex align-items-center">
+                            <i class="fas fa-check-circle text-secondary-blue me-2"></i> Key Engineering Highlights
+                        </h4>
+                        <ul class="mb-0 ps-3">
+                            @foreach($blog['key_takeaways'] as $takeaway)
+                            <li class="mb-2 text-dark small fw-medium">{{ $takeaway }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                     @endif
 
-                </div>
+                    <!-- Detailed Content Sections -->
+                    @if(!empty($blog['sections']))
+                        @foreach($blog['sections'] as $section)
+                        <div class="article-section mb-5">
+                            <h2 class="outfit fw-bold text-primary-custom mb-3">{{ $section['heading'] }}</h2>
+                            <div class="section-body text-secondary lh-lg">
+                                {!! $section['content'] !!}
+                            </div>
+                        </div>
+                        @endforeach
+                    @endif
+
+                    <!-- Engineering Capabilities Overview -->
+                    <div class="my-5 p-4 rounded-4 bg-light-industrial border">
+                        <h4 class="outfit fw-bold text-primary-custom mb-3">Why Trust Vishwakarma Engineering for Process Equipment?</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-certificate text-secondary-blue fa-lg mt-1 me-3"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">ASME & IS Standard Compliance</h6>
+                                        <p class="x-small text-muted mb-0">Engineered to ASME Section VIII Div 1, IS 2825, and API 650 design rules.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-microscope text-secondary-blue fa-lg mt-1 me-3"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">100% Non-Destructive Testing</h6>
+                                        <p class="x-small text-muted mb-0">Hydrostatic testing, Radiography (RT), Ultrasonic (UT), and DPT checks.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-industry text-secondary-blue fa-lg mt-1 me-3"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">State-of-the-Art Machine Shop</h6>
+                                        <p class="x-small text-muted mb-0">CNC plate rolling, dish end spinning, and automated SAW welding towers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-globe-asia text-secondary-blue fa-lg mt-1 me-3"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Global Exporter Capabilities</h6>
+                                        <p class="x-small text-muted mb-0">Seaworthy packaging, nitrogen purging, and TUV/SGS third-party dossiers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    @if(!empty($blog['faqs']))
+                    <div class="faq-article-section my-5">
+                        <h3 class="outfit fw-bold text-primary-custom mb-4">Frequently Asked Questions</h3>
+                        <div class="accordion accordion-flush" id="blogFaqAccordion">
+                            @foreach($blog['faqs'] as $fIndex => $faq)
+                            <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-none">
+                                <h2 class="accordion-header" id="faqHeading{{ $fIndex }}">
+                                    <button class="accordion-button collapsed fw-bold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse{{ $fIndex }}" aria-expanded="false" aria-controls="faqCollapse{{ $fIndex }}">
+                                        <i class="fas fa-question-circle text-secondary-blue me-2"></i> {{ $faq['question'] }}
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse{{ $fIndex }}" class="accordion-collapse collapse" aria-labelledby="faqHeading{{ $fIndex }}" data-bs-parent="#blogFaqAccordion">
+                                    <div class="accordion-body text-muted small bg-light">
+                                        {{ $faq['answer'] }}
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    @endif
+
+                    <!-- Author Box & Share -->
+                    <div class="p-4 rounded-4 bg-light border d-flex flex-column flex-md-row align-items-center gap-4 my-5">
+                        <div class="rounded-circle bg-primary-custom text-white d-flex align-items-center justify-content-center shadow-sm flex-shrink-0" style="width: 70px; height: 70px; font-size: 1.8rem;">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="text-center text-md-start">
+                            <h5 class="outfit fw-bold mb-1">{{ $blog['author'] }}</h5>
+                            <p class="text-muted small mb-0">Vishwakarma Engineering is an ISO-certified heavy fabrication facility based in Ahmedabad, Gujarat, specializing in high-pressure vessels, chemical reactors, storage tanks, and ETP equipment.</p>
+                        </div>
+                    </div>
+
+                    <!-- Call To Action Box -->
+                    <div class="p-4 p-md-5 rounded-4 shadow-sm text-white text-center" style="background: linear-gradient(135deg, #1b3168 0%, #006cb7 100%);">
+                        <h3 class="outfit fw-bold mb-3">Ready to Discuss Your Custom Fabrication Project?</h3>
+                        <p class="text-white text-opacity-90 small mb-4 mx-auto" style="max-width: 600px;">Share your design specifications or process datasheets with our senior engineering team for an accurate quotation and technical review.</p>
+                        <a href="{{ url('/contact') }}" class="btn btn-light btn-lg px-4 py-3 rounded-pill fw-bold text-primary-custom shadow-sm me-2">Request Technical Quote</a>
+                        <a href="{{ url('/products') }}" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill fw-bold">Explore Products</a>
+                    </div>
+                </article>
             </div>
 
             <!-- Sidebar -->
             <div class="col-lg-4">
-                <div class="blog-sidebar sticky-top" style="top: 100px; z-index: 5;">
-
-
-                    <!-- Recent Posts -->
-                    <div class="bg-light-industrial p-4 rounded-4 mb-4">
-                        <h5 class="outfit fw-bold mb-3">Recent Posts</h5>
-                        <div class="recent-post-item d-flex mb-3">
-                            <img src="{{ asset('assets/images/unsplash-photo-1516937941344-00b4e0337589.jpg') }}" class="rounded-3 me-3" style="width: 70px; height: 70px; object-fit: cover;">
-                            <div>
-                                <h6 class="small fw-bold mb-1"><a href="{{ url('/blogs/optimizing-chemical-reactor-efficiency') }}" class="text-decoration-none text-dark hover-blue">Optimizing Chemical Reactor Efficiency</a></h6>
-                                <span class="x-small text-muted">May 10, 2024</span>
-                            </div>
-                        </div>
-                        <div class="recent-post-item d-flex mb-3">
-                            <img src="{{ asset('assets/images/unsplash-photo-1581092918056-0c4c3acd3789.jpg') }}" class="rounded-3 me-3" style="width: 70px; height: 70px; object-fit: cover;">
-                            <div>
-                                <h6 class="small fw-bold mb-1"><a href="{{ url('/blogs/sustainable-effluent-treatment-solutions') }}" class="text-decoration-none text-dark hover-blue">Sustainable ETP Solutions</a></h6>
-                                <span class="x-small text-muted">May 05, 2024</span>
-                            </div>
-                        </div>
-                        <div class="recent-post-item d-flex">
-                            <img src="{{ asset('assets/images/unsplash-photo-1504917595217-d4dc5ebe6122.jpg') }}" class="rounded-3 me-3" style="width: 70px; height: 70px; object-fit: cover;">
-                            <div>
-                                <h6 class="small fw-bold mb-1"><a href="{{ url('/blogs/modern-storage-tank-safety') }}" class="text-decoration-none text-dark hover-blue">Storage Tank Safety Standards</a></h6>
-                                <span class="x-small text-muted">Apr 28, 2024</span>
-                            </div>
-                        </div>
+                <aside class="blog-sidebar sticky-top" style="top: 100px; z-index: 5;">
+                    <!-- Quick Search / Products Directory -->
+                    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-light-industrial">
+                        <h5 class="outfit fw-bold text-primary-custom mb-3">Product Categories</h5>
+                        <ul class="list-unstyled mb-0 small">
+                            <li class="mb-2">
+                                <a href="{{ url('/products/category/industrial-vessels') }}" class="text-decoration-none text-dark d-flex justify-content-between align-items-center hover-blue">
+                                    <span><i class="fas fa-chevron-right text-secondary-blue me-2"></i> Industrial Vessels</span>
+                                    <span class="badge bg-white text-secondary-blue rounded-pill">ASME / IS</span>
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="{{ url('/products/category/reactors') }}" class="text-decoration-none text-dark d-flex justify-content-between align-items-center hover-blue">
+                                    <span><i class="fas fa-chevron-right text-secondary-blue me-2"></i> Chemical Reactors</span>
+                                    <span class="badge bg-white text-secondary-blue rounded-pill">Limpet / Jacket</span>
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="{{ url('/products/category/storage-tanks') }}" class="text-decoration-none text-dark d-flex justify-content-between align-items-center hover-blue">
+                                    <span><i class="fas fa-chevron-right text-secondary-blue me-2"></i> Chemical Storage Tanks</span>
+                                    <span class="badge bg-white text-secondary-blue rounded-pill">API 650</span>
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="{{ url('/products/category/etp-effluent-treatment') }}" class="text-decoration-none text-dark d-flex justify-content-between align-items-center hover-blue">
+                                    <span><i class="fas fa-chevron-right text-secondary-blue me-2"></i> ETP & Wastewater Tanks</span>
+                                    <span class="badge bg-white text-secondary-blue rounded-pill">ZLD</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/products/category/columns-towers') }}" class="text-decoration-none text-dark d-flex justify-content-between align-items-center hover-blue">
+                                    <span><i class="fas fa-chevron-right text-secondary-blue me-2"></i> Distillation Columns</span>
+                                    <span class="badge bg-white text-secondary-blue rounded-pill">Ketchi</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
-                    <!-- CTA Sidebar -->
-                    <div class="bg-primary-custom p-4 rounded-4 text-white text-center">
-                        <h5 class="outfit fw-bold mb-3">Need a Solution?</h5>
-                        <p class="small opacity-75 mb-4">Contact our engineering experts for a customized quote today.</p>
-                        <a href="{{ url('/contact') }}" class="btn btn-outline-light w-100 rounded-pill">Contact Us</a>
+                    <!-- Recent Related Articles -->
+                    @if(!empty($relatedBlogs))
+                    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-white">
+                        <h5 class="outfit fw-bold text-primary-custom mb-3">Related Technical Guides</h5>
+                        <div class="d-flex flex-column gap-3">
+                            @foreach($relatedBlogs as $rBlog)
+                            <div class="d-flex align-items-center">
+                                <img src="{{ asset($rBlog['image']) }}" class="rounded-3 me-3 flex-shrink-0" style="width: 75px; height: 65px; object-fit: cover;" alt="{{ $rBlog['title'] }}">
+                                <div>
+                                    <h6 class="small fw-bold mb-1" style="line-height: 1.3;">
+                                        <a href="{{ url('/blogs/' . $rBlog['slug']) }}" class="text-decoration-none text-dark hover-blue">
+                                            {{ $rBlog['short_title'] ?? $rBlog['title'] }}
+                                        </a>
+                                    </h6>
+                                    <span class="x-small text-muted"><i class="far fa-calendar-alt me-1 text-secondary-blue"></i> {{ $rBlog['date_formatted'] }}</span>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
                     </div>
-                </div>
+                    @endif
+
+                    <!-- Quick Engineering Support Card -->
+                    <div class="card border-0 shadow-sm rounded-4 p-4 text-white text-center" style="background: linear-gradient(135deg, #1b3168 0%, #006cb7 100%);">
+                        <div class="mb-3">
+                            <i class="fas fa-headset fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="outfit fw-bold mb-2">Technical Inquiry</h5>
+                        <p class="small text-white text-opacity-80 mb-3">Speak directly with our process fabrication engineers for custom equipment design.</p>
+                        <a href="tel:+919825000000" class="btn btn-outline-light btn-sm w-100 rounded-pill mb-2"><i class="fas fa-phone-alt me-1"></i> Call Engineering Cell</a>
+                        <a href="{{ url('/contact') }}" class="btn btn-light btn-sm w-100 rounded-pill text-primary-custom fw-bold"><i class="fas fa-envelope me-1"></i> Send Online Inquiry</a>
+                    </div>
+                </aside>
             </div>
         </div>
     </div>
@@ -269,10 +269,30 @@ if ($slug == 'optimizing-chemical-reactor-performance') {
 
 @push('styles')
 <style>
-    .hover-blue:hover { color: var(--secondary-blue) !important; }
-    .x-small { font-size: 0.75rem; }
-    .list-styled { list-style: disc; padding-left: 20px; }
-    .italic { font-style: italic; }
-    .blog-content p { line-height: 1.8; color: #4a5568; }
+    .bg-light-industrial {
+        background-color: #f8fafc;
+    }
+    .hover-blue:hover {
+        color: #006cb7 !important;
+    }
+    .x-small {
+        font-size: 0.78rem;
+    }
+    .blog-article-content p {
+        line-height: 1.85;
+        font-size: 1.02rem;
+        color: #334155;
+    }
+    .blog-article-content ul, .blog-article-content ol {
+        line-height: 1.8;
+        color: #334155;
+    }
+    .border-primary-blue {
+        border-color: #1b3168 !important;
+    }
+    .accordion-button:not(.collapsed) {
+        color: #006cb7;
+        background-color: #f0f7ff;
+    }
 </style>
 @endpush

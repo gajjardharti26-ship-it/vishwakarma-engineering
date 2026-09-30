@@ -44,14 +44,10 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/blogs', function () {
-    return view('blogs.index');
-})->name('blogs');
+use App\Http\Controllers\BlogController;
 
-Route::get('/blogs/{slug}', function ($slug) {
-    $title = ucwords(str_replace('-', ' ', $slug));
-    return view('blogs.show', compact('slug', 'title'));
-})->name('blogs.show');
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
+Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
 
 Route::get('/clear-cache', function() {
     \Illuminate\Support\Facades\Artisan::call('optimize:clear');

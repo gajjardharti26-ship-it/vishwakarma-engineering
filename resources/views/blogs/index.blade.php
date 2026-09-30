@@ -76,9 +76,9 @@
                         <h3 class="outfit fw-bold mb-2">Have a Technical Requirement for Pressure Vessels or Chemical Reactors?</h3>
                         <p class="mb-0 text-white text-opacity-90 small">Our engineering team designs and manufactures tailor-made ASME & IS compliant process equipment to your exact datasheets.</p>
                     </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <a href="{{ url('/contact') }}" class="btn btn-light btn-lg px-4 py-3 rounded-pill fw-bold text-primary-custom shadow-sm me-2">Request a Quote</a>
-                        <a href="{{ url('/products') }}" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill fw-bold">View Products</a>
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                        <a href="{{ url('/contact') }}" class="btn btn-light px-3 py-2 rounded-pill fw-semibold text-primary-custom shadow-sm me-2" style="font-size: 0.88rem;">Request a Quote</a>
+                        <a href="{{ url('/products') }}" class="btn btn-outline-light px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.88rem;">View Products</a>
                     </div>
                 </div>
             </div>
